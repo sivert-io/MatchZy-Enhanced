@@ -78,14 +78,19 @@ dotnet restore
 echo -e "\n${BLUE}🔨 Building project (Release mode)...${NC}"
 dotnet publish -c Release
 
-# Create release directory
+# Create release directory structure
 RELEASE_DIR="MatchZy-${VERSION}"
 rm -rf "$RELEASE_DIR" "${RELEASE_DIR}.zip"
-mkdir -p "$RELEASE_DIR"
+mkdir -p "$RELEASE_DIR/addons/counterstrikesharp/plugins/MatchZy"
+mkdir -p "$RELEASE_DIR/cfg/MatchZy"
 
-# Copy files to release directory
-echo -e "\n${BLUE}📂 Copying files...${NC}"
-cp -r bin/Release/net8.0/publish/* "$RELEASE_DIR/"
+# Copy plugin files to proper directory structure
+echo -e "\n${BLUE}📂 Creating directory structure...${NC}"
+cp -r bin/Release/net8.0/publish/* "$RELEASE_DIR/addons/counterstrikesharp/plugins/MatchZy/"
+
+# Copy config files
+echo -e "${BLUE}📂 Copying config files...${NC}"
+cp -r cfg/MatchZy/* "$RELEASE_DIR/cfg/MatchZy/"
 
 # Create zip file
 echo -e "\n${BLUE}🗜️  Creating release archive...${NC}"
@@ -119,13 +124,22 @@ gh release create "v${VERSION}" \
     --notes "## Installation
 
 1. Download \`${RELEASE_DIR}.zip\`
-2. Extract to your CS2 server's \`game/csgo/addons/counterstrikesharp/plugins/\` directory
+2. Extract the contents to your CS2 server's \`game/csgo/\` directory
+   - The zip contains the proper folder structure (\`addons/\` and \`cfg/\`)
 3. Restart your server
 
 ## Requirements
 
 - CounterStrikeSharp (latest version)
-- CS2 Dedicated Server" \
+- CS2 Dedicated Server
+
+## Configuration
+
+Config files are located in \`csgo/cfg/MatchZy/\`:
+- \`config.cfg\` - Main plugin configuration
+- \`admins.json\` - Admin permissions
+- \`database.json\` - Database settings
+- \`live.cfg\`, \`warmup.cfg\`, \`knife.cfg\` - Match configs" \
     --draft=false \
     --latest
 

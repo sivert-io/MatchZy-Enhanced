@@ -21,11 +21,35 @@
 The script automatically:
 - ✅ Bumps version in `MatchZy.cs` (if specified)
 - ✅ Cleans and builds the project
-- ✅ Creates `MatchZy-X.Y.Z.zip`
+- ✅ Creates proper directory structure (`addons/` and `cfg/`)
+- ✅ Creates `MatchZy-X.Y.Z.zip` ready for extraction
 - ✅ Commits changes
 - ✅ Creates and pushes Git tag
 - ✅ Creates GitHub release
 - ✅ Uploads the zip file
+
+## Directory Structure
+
+The release zip contains:
+```
+MatchZy-X.Y.Z/
+├── addons/
+│   └── counterstrikesharp/
+│       └── plugins/
+│           └── MatchZy/
+│               ├── MatchZy.dll
+│               ├── lang/
+│               ├── spawns/
+│               └── runtimes/
+└── cfg/
+    └── MatchZy/
+        ├── config.cfg
+        ├── admins.json
+        ├── database.json
+        └── [other configs]
+```
+
+Users simply extract to their `csgo/` directory!
 
 ## Version Bumping
 
