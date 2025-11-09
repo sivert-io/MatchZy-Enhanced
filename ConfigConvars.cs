@@ -30,6 +30,11 @@ namespace MatchZy
 
         public FakeConVar<string> matchStartMessage = new("matchzy_match_start_message", "Message to show when the match starts. Use $$$ to break message into multiple lines. Set to \"\" to disable.", "");
 
+        // Tournament Status ConVars
+        public FakeConVar<string> tournamentStatus = new("matchzy_tournament_status", "Current status of the server (idle/loading/warmup/knife/live/paused/halftime/postgame/error)", "idle");
+        public FakeConVar<string> tournamentMatch = new("matchzy_tournament_match", "Match slug/identifier currently loaded on this server", "");
+        public FakeConVar<string> tournamentUpdated = new("matchzy_tournament_updated", "Unix timestamp of last tournament status update", "0");
+
         [ConsoleCommand("matchzy_whitelist_enabled_default", "Whether Whitelist is enabled by default or not. Default value: false")]
         public void MatchZyWLConvar(CCSPlayerController? player, CommandInfo command)
         {

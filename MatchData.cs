@@ -131,6 +131,25 @@ public class PlayerStats
     public int Mvps { get; set; }
 }
 
+public class MatchZyPlayerInfo
+{
+    [JsonPropertyName("steamid")]
+    public string SteamId { get; set; }
+
+    [JsonPropertyName("name")]
+    public string Name { get; set; }
+
+    [JsonPropertyName("team")]
+    public string Team { get; set; }
+
+    public MatchZyPlayerInfo(string steamId, string name, string team)
+    {
+        SteamId = steamId;
+        Name = name;
+        Team = team;
+    }
+}
+
 public class MatchZyTeamWrapper
 {
     [JsonPropertyName("id")]

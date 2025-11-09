@@ -14,6 +14,8 @@ public partial class MatchZy
         // Tech Pause is WIP
         return;
 
+        // TODO: Re-enable when tech pause is implemented
+        /*
         if (!isMatchLive) return;
 
         // Treating .tech command as .forcepause if it is used via server console.
@@ -64,5 +66,6 @@ public partial class MatchZy
             PrintToPlayerChat(player, Localizer["matchzy.pause.notechpauseleft", playerTeam.teamName]);
             return;
         }
+        */
     }
 }

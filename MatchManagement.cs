@@ -71,6 +71,7 @@ namespace MatchZy
                 {
                     // command.ReplyToCommand("Match load failed! Resetting current match");
                     ReplyToUserCommand(player, Localizer["matchzy.mm.matchloadfailed"]);
+                    UpdateTournamentStatus("error");
                     ResetMatch();
                 }
                 loadedConfigFile = fileName;
@@ -78,6 +79,7 @@ namespace MatchZy
             catch (Exception e)
             {
                 Log($"[LoadMatch - FATAL] An error occured: {e.Message}");
+                UpdateTournamentStatus("error");
                 return;
             }
         }
@@ -127,6 +129,7 @@ namespace MatchZy
                     {
                         // command.ReplyToCommand("Match load failed! Resetting current match");
                         ReplyToUserCommand(player, Localizer["matchzy.mm.matchloadfailed"]);
+                        UpdateTournamentStatus("error");
                         ResetMatch();
                     }
                     loadedConfigFile = url;
@@ -135,12 +138,14 @@ namespace MatchZy
                 {
                     // command.ReplyToCommand($"[LoadMatchFromURL] HTTP request failed with status code: {response.StatusCode}");
                     ReplyToUserCommand(player, Localizer["matchzy.mm.httprequestfailed", response.StatusCode]);
+                    UpdateTournamentStatus("error");
                     Log($"[LoadMatchFromURL] HTTP request failed with status code: {response.StatusCode}");
                 }
             }
             catch (Exception e)
             {
                 Log($"[LoadMatchFromURL - FATAL] An error occured: {e.Message}");
+                UpdateTournamentStatus("error");
                 return;
             }
         }
@@ -261,6 +266,7 @@ namespace MatchZy
             if (validationError != "")
             {
                 Log($"[LoadMatchDataCommand] {validationError}");
+                UpdateTournamentStatus("error");
                 return false;
             }
 
@@ -268,6 +274,9 @@ namespace MatchZy
             {
                 liveMatchId = (long)jsonDataObject["matchid"]!;
             }
+            
+            // Update tournament status to loading with match ID
+            UpdateTournamentStatus("loading", liveMatchId.ToString());
             JToken team1 = jsonDataObject["team1"]!;
             JToken team2 = jsonDataObject["team2"]!;
             JToken maplist = jsonDataObject["maplist"]!;
@@ -532,6 +541,70 @@ namespace MatchZy
 
             (teamSides[matchzyTeam1], teamSides[matchzyTeam2]) = (teamSides[matchzyTeam2], teamSides[matchzyTeam1]);
             (reverseTeamSides["CT"], reverseTeamSides["TERRORIST"]) = (reverseTeamSides["TERRORIST"], reverseTeamSides["CT"]);
+
+            // Send side_swap event
+            if (isMatchLive)
+            {
+                Log($"[SwapSidesInTeamData] Sending side_swap event");
+                
+                var sideSwapEvent = new MatchZySideSwapEvent
+                {
+                    MatchId = liveMatchId,
+                    MapNumber = matchConfig.CurrentMapNumber,
+                    Team1Side = teamSides[matchzyTeam1],
+                    Team2Side = teamSides[matchzyTeam2]
+                };
+
+                Task.Run(async () => {
+                    await SendEventAsync(sideSwapEvent);
+                });
+
+                // Check if this is halftime or overtime
+                var gameRules = Utilities.FindAllEntitiesByDesignerName<CCSGameRulesProxy>("cs_gamerules").First().GameRules!;
+                int roundsPlayed = gameRules.TotalRoundsPlayed;
+                int roundsPerHalf = ConVar.Find("mp_maxrounds")!.GetPrimitiveValue<int>() / 2;
+                int roundsPerOTHalf = ConVar.Find("mp_overtime_maxrounds")!.GetPrimitiveValue<int>() / 2;
+
+                if (roundsPlayed == roundsPerHalf)
+                {
+                    // This is halftime
+                    Log($"[SwapSidesInTeamData] Halftime detected, sending halftime_started event");
+                    (int t1score, int t2score) = GetTeamsScore();
+                    var halftimeStartedEvent = new MatchZyHalftimeStartedEvent
+                    {
+                        MatchId = liveMatchId,
+                        MapNumber = matchConfig.CurrentMapNumber,
+                        Team1Score = t1score,
+                        Team2Score = t2score
+                    };
+
+                    Task.Run(async () => {
+                        await SendEventAsync(halftimeStartedEvent);
+                    });
+                    UpdateTournamentStatus("halftime");
+                }
+                else if (roundsPlayed >= 2 * roundsPerHalf)
+                {
+                    // This is overtime
+                    int otround = roundsPlayed - 2 * roundsPerHalf;
+                    if ((otround + roundsPerOTHalf) % (2 * roundsPerOTHalf) == 0)
+                    {
+                        int overtimeNumber = (otround / (2 * roundsPerOTHalf)) + 1;
+                        Log($"[SwapSidesInTeamData] Overtime detected, sending overtime_started event - OT#{overtimeNumber}");
+                        
+                        var overtimeStartedEvent = new MatchZyOvertimeStartedEvent
+                        {
+                            MatchId = liveMatchId,
+                            MapNumber = matchConfig.CurrentMapNumber,
+                            OvertimeNumber = overtimeNumber
+                        };
+
+                        Task.Run(async () => {
+                            await SendEventAsync(overtimeStartedEvent);
+                        });
+                    }
+                }
+            }
         }
 
         private CsTeam GetPlayerTeam(CCSPlayerController player)

@@ -14,7 +14,7 @@ namespace MatchZy
 
         public override string ModuleName => "MatchZy";
 
-        public override string ModuleVersion => "0.8.15";
+        public override string ModuleVersion => "0.8.16";
 
         public override string ModuleAuthor => "WD- (https://github.com/shobhit-pathak/)";
 
@@ -39,6 +39,7 @@ namespace MatchZy
 
         // Pause Data
         public bool isPaused = false;
+        public long pauseStartTime = 0;
         public Dictionary<string, object> unpauseData = new Dictionary<string, object> {
             { "ct", false },
             { "t", false },
@@ -202,7 +203,9 @@ namespace MatchZy
                 { ".besttspawn", OnBestTSpawnCommand },
                 { ".worsttspawn", OnWorstTSpawnCommand },
                 { ".savepos", OnSavePosCommand},
-                { ".loadpos", OnLoadPosCommand}
+                { ".loadpos", OnLoadPosCommand},
+                { ".te", OnTestEventCommand},
+                { ".testevent", OnTestEventCommand}
             };
 
             RegisterEventHandler<EventPlayerConnectFull>(EventPlayerConnectFullHandler);
@@ -280,6 +283,25 @@ namespace MatchZy
                 @event.Reason = finalEvent;
                 isSideSelectionPhase = true;
                 isKnifeRound = false;
+
+                // Send knife_round_ended event
+                string winnerTeam = knifeWinner == 3 ? 
+                    (reverseTeamSides.ContainsKey("CT") ? (reverseTeamSides["CT"] == matchzyTeam1 ? "team1" : "team2") : "none") :
+                    (reverseTeamSides.ContainsKey("TERRORIST") ? (reverseTeamSides["TERRORIST"] == matchzyTeam1 ? "team1" : "team2") : "none");
+
+                Log($"[EventRoundEnd] Knife round ended, sending knife_round_ended event - winner: {winnerTeam}");
+                
+                var knifeEndedEvent = new MatchZyKnifeRoundEndedEvent
+                {
+                    MatchId = liveMatchId,
+                    MapNumber = matchConfig.CurrentMapNumber,
+                    Winner = winnerTeam
+                };
+
+                Task.Run(async () => {
+                    await SendEventAsync(knifeEndedEvent);
+                });
+
                 StartAfterKnifeWarmup();
 
                 return HookResult.Changed;

@@ -93,12 +93,35 @@ public class MatchZyPlayerTimedRoundEvent : MatchZyTimedRoundEvent
     }
 }
 
+public class MatchZyPlayerConnectedEvent : MatchZyMatchEvent
+{
+    [JsonPropertyName("player")]
+    public required MatchZyPlayerInfo Player { get; init; }
+
+    public MatchZyPlayerConnectedEvent() : base("player_connect")
+    {
+    }
+}
+
 public class MatchZyPlayerDisconnectedEvent : MatchZyMatchEvent
 {
     [JsonPropertyName("player")]
-    public required int Player { get; init; }
+    public required MatchZyPlayerInfo Player { get; init; }
 
     public MatchZyPlayerDisconnectedEvent() : base("player_disconnect")
+    {
+    }
+}
+
+public class MatchZyBackupLoadedEvent : MatchZyMapEvent
+{
+    [JsonPropertyName("round_number")]
+    public required int RoundNumber { get; init; }
+
+    [JsonPropertyName("filename")]
+    public required string FileName { get; init; }
+
+    public MatchZyBackupLoadedEvent() : base("backup_loaded")
     {
     }
 }
@@ -233,6 +256,249 @@ public class MatchZyDemoUploadedEvent : MatchZyMatchEvent
     public bool Success { get; set; }
 
     public MatchZyDemoUploadedEvent() : base("demo_upload_ended")
+    {
+    }
+}
+
+// Player Ready System Events
+public class MatchZyPlayerReadyEvent : MatchZyMatchEvent
+{
+    [JsonPropertyName("player")]
+    public required MatchZyPlayerInfo Player { get; init; }
+
+    [JsonPropertyName("team")]
+    public required string Team { get; init; }
+
+    [JsonPropertyName("ready_count_team1")]
+    public required int ReadyCountTeam1 { get; init; }
+
+    [JsonPropertyName("ready_count_team2")]
+    public required int ReadyCountTeam2 { get; init; }
+
+    [JsonPropertyName("total_ready")]
+    public required int TotalReady { get; init; }
+
+    [JsonPropertyName("expected_total")]
+    public required int ExpectedTotal { get; init; }
+
+    public MatchZyPlayerReadyEvent() : base("player_ready")
+    {
+    }
+}
+
+public class MatchZyPlayerUnreadyEvent : MatchZyMatchEvent
+{
+    [JsonPropertyName("player")]
+    public required MatchZyPlayerInfo Player { get; init; }
+
+    [JsonPropertyName("team")]
+    public required string Team { get; init; }
+
+    [JsonPropertyName("ready_count_team1")]
+    public required int ReadyCountTeam1 { get; init; }
+
+    [JsonPropertyName("ready_count_team2")]
+    public required int ReadyCountTeam2 { get; init; }
+
+    [JsonPropertyName("total_ready")]
+    public required int TotalReady { get; init; }
+
+    [JsonPropertyName("expected_total")]
+    public required int ExpectedTotal { get; init; }
+
+    public MatchZyPlayerUnreadyEvent() : base("player_unready")
+    {
+    }
+}
+
+public class MatchZyTeamReadyEvent : MatchZyMatchEvent
+{
+    [JsonPropertyName("team")]
+    public required string Team { get; init; }
+
+    [JsonPropertyName("ready_count")]
+    public required int ReadyCount { get; init; }
+
+    [JsonPropertyName("total_ready")]
+    public required int TotalReady { get; init; }
+
+    [JsonPropertyName("expected_total")]
+    public required int ExpectedTotal { get; init; }
+
+    public MatchZyTeamReadyEvent() : base("team_ready")
+    {
+    }
+}
+
+public class MatchZyAllPlayersReadyEvent : MatchZyMatchEvent
+{
+    [JsonPropertyName("ready_count_team1")]
+    public required int ReadyCountTeam1 { get; init; }
+
+    [JsonPropertyName("ready_count_team2")]
+    public required int ReadyCountTeam2 { get; init; }
+
+    [JsonPropertyName("total_ready")]
+    public required int TotalReady { get; init; }
+
+    [JsonPropertyName("countdown_started")]
+    public required bool CountdownStarted { get; init; }
+
+    public MatchZyAllPlayersReadyEvent() : base("all_players_ready")
+    {
+    }
+}
+
+// Match Phase Change Events
+public class MatchZyWarmupEndedEvent : MatchZyMapEvent
+{
+    public MatchZyWarmupEndedEvent() : base("warmup_ended")
+    {
+    }
+}
+
+public class MatchZyKnifeRoundStartedEvent : MatchZyMapEvent
+{
+    public MatchZyKnifeRoundStartedEvent() : base("knife_round_started")
+    {
+    }
+}
+
+public class MatchZyKnifeRoundEndedEvent : MatchZyMapEvent
+{
+    [JsonPropertyName("winner")]
+    public required string Winner { get; init; }
+
+    public MatchZyKnifeRoundEndedEvent() : base("knife_round_ended")
+    {
+    }
+}
+
+// Pause System Events
+public class MatchZyPauseRequestedEvent : MatchZyMapEvent
+{
+    [JsonPropertyName("requested_by")]
+    public required MatchZyPlayerInfo RequestedBy { get; init; }
+
+    [JsonPropertyName("is_tactical")]
+    public required bool IsTactical { get; init; }
+
+    [JsonPropertyName("is_admin")]
+    public required bool IsAdmin { get; init; }
+
+    public MatchZyPauseRequestedEvent() : base("pause_requested")
+    {
+    }
+}
+
+public class MatchZyMatchPausedEvent : MatchZyMapEvent
+{
+    [JsonPropertyName("paused_by")]
+    public required MatchZyPlayerInfo PausedBy { get; init; }
+
+    [JsonPropertyName("is_tactical")]
+    public required bool IsTactical { get; init; }
+
+    [JsonPropertyName("is_admin")]
+    public required bool IsAdmin { get; init; }
+
+    [JsonPropertyName("pause_time")]
+    public required long PauseTime { get; init; }
+
+    public MatchZyMatchPausedEvent() : base("match_paused")
+    {
+    }
+}
+
+public class MatchZyUnpauseRequestedEvent : MatchZyMapEvent
+{
+    [JsonPropertyName("team")]
+    public required string Team { get; init; }
+
+    [JsonPropertyName("teams_ready")]
+    public required int TeamsReady { get; init; }
+
+    [JsonPropertyName("teams_needed")]
+    public required int TeamsNeeded { get; init; }
+
+    public MatchZyUnpauseRequestedEvent() : base("unpause_requested")
+    {
+    }
+}
+
+public class MatchZyMatchUnpausedEvent : MatchZyMapEvent
+{
+    [JsonPropertyName("pause_duration")]
+    public required long PauseDuration { get; init; }
+
+    public MatchZyMatchUnpausedEvent() : base("match_unpaused")
+    {
+    }
+}
+
+// Round and Game State Events
+public class MatchZyRoundStartedEvent : MatchZyRoundEvent
+{
+    [JsonPropertyName("team1_score")]
+    public required int Team1Score { get; init; }
+
+    [JsonPropertyName("team2_score")]
+    public required int Team2Score { get; init; }
+
+    public MatchZyRoundStartedEvent() : base("round_started")
+    {
+    }
+}
+
+public class MatchZyHalftimeStartedEvent : MatchZyMapEvent
+{
+    [JsonPropertyName("team1_score")]
+    public required int Team1Score { get; init; }
+
+    [JsonPropertyName("team2_score")]
+    public required int Team2Score { get; init; }
+
+    public MatchZyHalftimeStartedEvent() : base("halftime_started")
+    {
+    }
+}
+
+public class MatchZyOvertimeStartedEvent : MatchZyMapEvent
+{
+    [JsonPropertyName("overtime_number")]
+    public required int OvertimeNumber { get; init; }
+
+    public MatchZyOvertimeStartedEvent() : base("overtime_started")
+    {
+    }
+}
+
+public class MatchZySideSwapEvent : MatchZyMapEvent
+{
+    [JsonPropertyName("team1_side")]
+    public required string Team1Side { get; init; }
+
+    [JsonPropertyName("team2_side")]
+    public required string Team2Side { get; init; }
+
+    public MatchZySideSwapEvent() : base("side_swap")
+    {
+    }
+}
+
+// Test Event
+public class MatchZyTestEvent : MatchZyMatchEvent
+{
+    [JsonPropertyName("message")]
+    public required string Message { get; init; }
+
+    [JsonPropertyName("timestamp")]
+    public required long Timestamp { get; init; }
+
+    [JsonPropertyName("triggered_by")]
+    public required string TriggeredBy { get; init; }
+
+    public MatchZyTestEvent() : base("test_event")
     {
     }
 }

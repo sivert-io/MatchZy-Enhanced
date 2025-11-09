@@ -63,6 +63,33 @@ public partial class MatchZy
                     AutoStart();
                 }
             }
+
+            // Send player_connect event
+            if (isMatchSetup)
+            {
+                Log($"[EventPlayerConnectFull] Sending player_connect event for {player.PlayerName}");
+                
+                var playerInfo = new MatchZyPlayerInfo(
+                    player.SteamID.ToString(),
+                    player.PlayerName,
+                    "none" // Team will be assigned later
+                );
+
+                var playerConnectEvent = new MatchZyPlayerConnectedEvent
+                {
+                    MatchId = liveMatchId,
+                    Player = playerInfo
+                };
+
+                Task.Run(async () => {
+                    await SendEventAsync(playerConnectEvent);
+                });
+            }
+            else
+            {
+                Log($"[EventPlayerConnectFull] Skipping player_connect event - Match not setup");
+            }
+
             return HookResult.Continue;
 
         }
@@ -105,6 +132,42 @@ public partial class MatchZy
             noFlashList.Remove(userId);
             lastGrenadesData.Remove(userId);
             nadeSpecificLastGrenadeData.Remove(userId);
+
+            // Send player_disconnect event
+            if (isMatchSetup)
+            {
+                Log($"[EventPlayerDisconnect] Sending player_disconnect event for {player.PlayerName}");
+                
+                string teamName = "none";
+                if (reverseTeamSides.ContainsKey("CT") && player.TeamNum == 3)
+                {
+                    teamName = reverseTeamSides["CT"].teamName;
+                }
+                else if (reverseTeamSides.ContainsKey("TERRORIST") && player.TeamNum == 2)
+                {
+                    teamName = reverseTeamSides["TERRORIST"].teamName;
+                }
+
+                var playerInfo = new MatchZyPlayerInfo(
+                    player.SteamID.ToString(),
+                    player.PlayerName,
+                    teamName
+                );
+
+                var playerDisconnectEvent = new MatchZyPlayerDisconnectedEvent
+                {
+                    MatchId = liveMatchId,
+                    Player = playerInfo
+                };
+
+                Task.Run(async () => {
+                    await SendEventAsync(playerDisconnectEvent);
+                });
+            }
+            else
+            {
+                Log($"[EventPlayerDisconnect] Skipping player_disconnect event - Match not setup");
+            }
 
             return HookResult.Continue;
         }

@@ -140,6 +140,30 @@ namespace MatchZy
             return playerData.Count;
         }
 
+        // Helper function to update tournament status ConVars
+        private void UpdateTournamentStatus(string status, string matchSlug = "")
+        {
+            try
+            {
+                tournamentStatus.Value = status;
+                
+                if (!string.IsNullOrEmpty(matchSlug))
+                {
+                    tournamentMatch.Value = matchSlug;
+                }
+                
+                // Update timestamp to current Unix time
+                long timestamp = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
+                tournamentUpdated.Value = timestamp.ToString();
+                
+                Log($"[UpdateTournamentStatus] Status: {status}, Match: {tournamentMatch.Value}, Timestamp: {timestamp}");
+            }
+            catch (Exception e)
+            {
+                Log($"[UpdateTournamentStatus FATAL] An error occurred: {e.Message}");
+            }
+        }
+
         private void SendUnreadyPlayersMessage()
         {
             if (!isWarmup || matchStarted) return;
@@ -234,6 +258,7 @@ namespace MatchZy
             unreadyPlayerMessageTimer ??= AddTimer(chatTimerDelay, SendUnreadyPlayersMessage, TimerFlags.REPEAT);
             isWarmup = true;
             ExecWarmupCfg();
+            UpdateTournamentStatus("warmup");
         }
 
         private void StartKnifeRound()
@@ -250,6 +275,28 @@ namespace MatchZy
             isKnifeRound = true;
             readyAvailable = false;
             isWarmup = false;
+
+            // Send warmup_ended event
+            Log($"[StartKnifeRound] Sending warmup_ended event");
+            var warmupEndedEvent = new MatchZyWarmupEndedEvent
+            {
+                MatchId = liveMatchId,
+                MapNumber = matchConfig.CurrentMapNumber
+            };
+            Task.Run(async () => {
+                await SendEventAsync(warmupEndedEvent);
+            });
+
+            // Send knife_round_started event
+            Log($"[StartKnifeRound] Sending knife_round_started event");
+            var knifeStartedEvent = new MatchZyKnifeRoundStartedEvent
+            {
+                MatchId = liveMatchId,
+                MapNumber = matchConfig.CurrentMapNumber
+            };
+            Task.Run(async () => {
+                await SendEventAsync(knifeStartedEvent);
+            });
 
             var absolutePath = Path.Join(Server.GameDirectory + "/csgo/cfg", knifeCfgPath);
 
@@ -268,6 +315,7 @@ namespace MatchZy
             PrintToAllChat($"{ChatColors.Olive}KNIFE!");
             PrintToAllChat($"{ChatColors.Lime}KNIFE!");
             PrintToAllChat($"{ChatColors.Green}KNIFE!");
+            UpdateTournamentStatus("knife");
         }
 
         private void SendSideSelectionMessage()
@@ -328,6 +376,20 @@ namespace MatchZy
             PrintToAllChat($"{ChatColors.Lime}LIVE!");
             PrintToAllChat($"{ChatColors.Green}LIVE!");
 
+            // Send warmup_ended event if not coming from knife round
+            if (!isSideSelectionPhase)
+            {
+                Log($"[StartLive] Sending warmup_ended event");
+                var warmupEndedEvent = new MatchZyWarmupEndedEvent
+                {
+                    MatchId = liveMatchId,
+                    MapNumber = matchConfig.CurrentMapNumber
+                };
+                Task.Run(async () => {
+                    await SendEventAsync(warmupEndedEvent);
+                });
+            }
+
             var goingLiveEvent = new GoingLiveEvent
             {
                 MatchId = liveMatchId,
@@ -338,6 +400,7 @@ namespace MatchZy
             {
                 await SendEventAsync(goingLiveEvent);
             });
+            UpdateTournamentStatus("live");
         }
 
         private void KillPhaseTimers()
@@ -487,6 +550,7 @@ namespace MatchZy
                     unreadyPlayerMessageTimer = null;
                     unreadyPlayerMessageTimer ??= AddTimer(chatTimerDelay, SendUnreadyPlayersMessage, TimerFlags.REPEAT);
                 }
+                UpdateTournamentStatus("idle", "");
             }
             catch (Exception ex)
             {
@@ -805,6 +869,8 @@ namespace MatchZy
             // Hence returning from here until we find a proper solution
             return;
 
+            // TODO: Re-enable when clan tag system is fixed
+            /*
             if (readyAvailable && !matchStarted)
             {
                 foreach (var key in playerData.Keys)
@@ -835,11 +901,14 @@ namespace MatchZy
                     Server.PrintToChatAll($"PlayerName: {playerData[key].PlayerName} Clan: {playerData[key].Clan}");
                 }
             }
+            */
         }
 
         private void HandleMatchEnd()
         {
             if (!isMatchLive) return;
+
+            UpdateTournamentStatus("postgame");
 
             // This ensures that the mp_match_restart_delay is not shorter than what is required for the GOTV recording to finish.
             // Ref: Get5
@@ -1035,6 +1104,26 @@ namespace MatchZy
             CreateMatchZyRoundDataBackup();
             InitPlayerDamageInfo();
             UpdateHostname();
+
+            // Send round_started event
+            if (isMatchLive)
+            {
+                Log($"[HandlePostRoundStartEvent] Sending round_started event");
+                (int t1score, int t2score) = GetTeamsScore();
+                
+                var roundStartedEvent = new MatchZyRoundStartedEvent
+                {
+                    MatchId = liveMatchId,
+                    MapNumber = matchConfig.CurrentMapNumber,
+                    RoundNumber = GetRoundNumer() + 1, // Next round number
+                    Team1Score = t1score,
+                    Team2Score = t2score
+                };
+
+                Task.Run(async () => {
+                    await SendEventAsync(roundStartedEvent);
+                });
+            }
         }
 
         private void HandlePostRoundEndEvent(EventRoundEnd @event)
@@ -1188,6 +1277,7 @@ namespace MatchZy
 
                 string pauseTeamName = "Admin";
                 unpauseData["pauseTeam"] = "Admin";
+                bool isAdmin = false;
                 if (player?.TeamNum == 2)
                 {
 
@@ -1201,12 +1291,38 @@ namespace MatchZy
                 }
                 else
                 {
-                    return;
+                    isAdmin = true;
                 }
                 PrintToAllChat(Localizer["matchzy.pause.pausedthematch", pauseTeamName]);
                 // Server.PrintToChatAll($"{chatPrefix} {ChatColors.Green}{pauseTeamName}{ChatColors.Default} has paused the match. Type .unpause to unpause the match");
 
                 SetMatchPausedFlags();
+
+                // Send match_paused event
+                if (player != null && player.UserId.HasValue)
+                {
+                    Log($"[PauseMatch] Sending match_paused event - paused by {player.PlayerName}");
+                    
+                    var playerInfo = new MatchZyPlayerInfo(
+                        player.SteamID.ToString(),
+                        player.PlayerName,
+                        pauseTeamName
+                    );
+
+                    var matchPausedEvent = new MatchZyMatchPausedEvent
+                    {
+                        MatchId = liveMatchId,
+                        MapNumber = matchConfig.CurrentMapNumber,
+                        PausedBy = playerInfo,
+                        IsTactical = isPauseCommandForTactical,
+                        IsAdmin = isAdmin,
+                        PauseTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds()
+                    };
+
+                    Task.Run(async () => {
+                        await SendEventAsync(matchPausedEvent);
+                    });
+                }
             }
         }
 
@@ -1250,6 +1366,29 @@ namespace MatchZy
                 Server.PrintToConsole($"[MatchZy] {Localizer["matchzy.pause.adminpausedthematch"]}");
             }
             SetMatchPausedFlags();
+
+            // Send match_paused event for admin pause
+            Log($"[ForcePauseMatch] Sending match_paused event - admin pause");
+            
+            var adminPlayerInfo = new MatchZyPlayerInfo(
+                player?.SteamID.ToString() ?? "Console",
+                player?.PlayerName ?? "Admin",
+                "Admin"
+            );
+
+            var matchPausedEvent = new MatchZyMatchPausedEvent
+            {
+                MatchId = liveMatchId,
+                MapNumber = matchConfig.CurrentMapNumber,
+                PausedBy = adminPlayerInfo,
+                IsTactical = false,
+                IsAdmin = true,
+                PauseTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds()
+            };
+
+            Task.Run(async () => {
+                await SendEventAsync(matchPausedEvent);
+            });
         }
 
         private void ForceUnpauseMatch(CCSPlayerController? player, CommandInfo? command)
@@ -1274,14 +1413,39 @@ namespace MatchZy
         private void UnpauseMatch()
         {
             Server.ExecuteCommand("mp_unpause_match;");
+            
+            // Calculate pause duration
+            long pauseDuration = 0;
+            if (pauseStartTime > 0)
+            {
+                pauseDuration = DateTimeOffset.UtcNow.ToUnixTimeSeconds() - pauseStartTime;
+            }
+
             isPaused = false;
+            pauseStartTime = 0;
             unpauseData["ct"] = false;
             unpauseData["t"] = false;
+            
             if (!isPaused && pausedStateTimer != null)
             {
                 pausedStateTimer.Kill();
                 pausedStateTimer = null;
             }
+
+            // Send match_unpaused event
+            Log($"[UnpauseMatch] Sending match_unpaused event - pause duration: {pauseDuration}s");
+            
+            var matchUnpausedEvent = new MatchZyMatchUnpausedEvent
+            {
+                MatchId = liveMatchId,
+                MapNumber = matchConfig.CurrentMapNumber,
+                PauseDuration = pauseDuration
+            };
+
+            Task.Run(async () => {
+                await SendEventAsync(matchUnpausedEvent);
+            });
+            UpdateTournamentStatus("live");
         }
 
         private void SetMatchPausedFlags()
@@ -1291,8 +1455,10 @@ namespace MatchZy
 
             Server.ExecuteCommand("mp_pause_match;");
             isPaused = true;
+            pauseStartTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds();
 
             pausedStateTimer ??= AddTimer(chatTimerDelay, SendPausedStateMessage, TimerFlags.REPEAT);
+            UpdateTournamentStatus("paused");
         }
 
         private void StartMatchMode()
