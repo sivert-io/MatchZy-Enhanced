@@ -1,4 +1,7 @@
-obj/*
-bin/*
+obj/
+bin/
+publish/
 /.vs
 MatchZy.sln
+MatchZy-*/
+*.zip
