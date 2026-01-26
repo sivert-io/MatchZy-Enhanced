@@ -1,0 +1,2120 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Matchzy Enhanced — an enhanced CS2 MatchZy plugin tailored for tournament automation with MatchZy Auto Tournament.
+">
+      
+      
+        <meta name="author" content="Sivert Gullberg Hansen">
+      
+      
+        <link rel="canonical" href="https://me.sivert.io/configuration/">
+      
+      
+        <link rel="prev" href="../installation/">
+      
+      
+        <link rel="next" href="../commands/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../icon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Configuration - Matchzy Enhanced</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#overview" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Matchzy Enhanced" class="md-header__button md-logo" aria-label="Matchzy Enhanced" data-md-component="logo">
+      
+  <img src="../icon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Matchzy Enhanced
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Configuration
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to system preference" type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sivert-io/MatchZy" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    sivert-io/MatchZy
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../installation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../integration/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Integration
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../CHANGELOG/" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Matchzy Enhanced" class="md-nav__button md-logo" aria-label="Matchzy Enhanced" data-md-component="logo">
+      
+  <img src="../icon.svg" alt="logo">
+
+    </a>
+    Matchzy Enhanced
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sivert-io/MatchZy" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    sivert-io/MatchZy
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-config-files-cfgmatchzy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core config files (cfg/MatchZy/)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important-convars-for-auto-tournament-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important convars for Auto Tournament integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enhanced-features-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enhanced features configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enhanced features configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-ready-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-Ready System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhanced-pause-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enhanced Pause System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enhanced Pause System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-use-pluginmanaged-pauses-instead-of-native-tactical-timeouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Use plugin‑managed pauses instead of native tactical timeouts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#side-selection-timer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Side Selection Timer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#early-match-termination-gg-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Early Match Termination (.gg Command)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ffw-forfeitwalkover-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FFW (Forfeit/Walkover) System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-match-config-from-auto-tournament" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON match config (from Auto Tournament)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON match config (from Auto Tournament)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-json-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important JSON fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecated-vetorelated-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deprecated veto‑related fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulationspecific-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulation‑specific configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Configurations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Configurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tournament-fast-paced-online" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tournament: Fast-Paced Online
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tournament-professional-league" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tournament: Professional League
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practice-casual-scrims" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice: Casual Scrims
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ranked-matchmaking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ranked: Matchmaking
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#center-html-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Center HTML Notifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-reliability-retry-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event reliability &amp; retry system
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging &amp; logging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Debugging &amp; logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matchzy_debug_chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        matchzy_debug_chat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matchzy_debug_console" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        matchzy_debug_console
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../center-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Center Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LLM_QUICK_REFERENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM Quick Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../CHANGELOG/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Overview
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#core-config-files-cfgmatchzy" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Core config files (cfg/MatchZy/)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#important-convars-for-auto-tournament-integration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important convars for Auto Tournament integration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#enhanced-features-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enhanced features configuration
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enhanced features configuration">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#auto-ready-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auto-Ready System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#enhanced-pause-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Enhanced Pause System
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Enhanced Pause System">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-use-pluginmanaged-pauses-instead-of-native-tactical-timeouts" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: Use plugin‑managed pauses instead of native tactical timeouts
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#side-selection-timer" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Side Selection Timer
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#early-match-termination-gg-command" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Early Match Termination (.gg Command)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ffw-forfeitwalkover-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        FFW (Forfeit/Walkover) System
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configuration-templates" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Configuration templates
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#json-match-config-from-auto-tournament" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        JSON match config (from Auto Tournament)
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="JSON match config (from Auto Tournament)">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#important-json-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Important JSON fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deprecated-vetorelated-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Deprecated veto‑related fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#simulationspecific-configuration" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Simulation‑specific configuration
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-configurations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example Configurations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Example Configurations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tournament-fast-paced-online" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tournament: Fast-Paced Online
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tournament-professional-league" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Tournament: Professional League
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#practice-casual-scrims" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Practice: Casual Scrims
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ranked-matchmaking" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Ranked: Matchmaking
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#center-html-notifications" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Center HTML Notifications
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#event-reliability-retry-system" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Event reliability &amp; retry system
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-logging" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging &amp; logging
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Debugging &amp; logging">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#matchzy_debug_chat" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        matchzy_debug_chat
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#matchzy_debug_console" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        matchzy_debug_console
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Summary
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+  <h1>Configuration</h1>
+
+<h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">¶</a></h2>
+<p>MatchZy reads configuration from:</p>
+<ul>
+<li><strong>ConVars</strong> (CounterStrikeSharp / server cvars) – control plugin behavior.</li>
+<li><strong>Config files</strong> under <code>cfg/MatchZy/</code> – executed at specific lifecycle moments.</li>
+<li><strong>JSON match configs</strong> – loaded from a URL (typically MatchZy Auto Tournament).</li>
+</ul>
+<p>This page focuses on the parts that matter most when integrating with<br>
+<strong><a href="https://mat.sivert.io">MatchZy Auto Tournament</a></strong>.</p>
+<p>For detailed timing of when each config file is executed, see<br>
+<code>Config loading behavior</code> (which documents the exact flow).</p>
+<h2 id="core-config-files-cfgmatchzy">Core config files (<code>cfg/MatchZy/</code>)<a class="headerlink" href="#core-config-files-cfgmatchzy" title="Permanent link">¶</a></h2>
+<p>By default, the plugin ships with:</p>
+<ul>
+<li><code>config.cfg</code> – main MatchZy plugin convars.</li>
+<li><code>live.cfg</code> / <code>live_wingman.cfg</code> – game settings used when a match goes live.</li>
+<li><code>warmup.cfg</code> – game settings used during warmup.</li>
+<li><code>knife.cfg</code> – game settings used during knife rounds.</li>
+<li><code>sleep.cfg</code>, <code>prac.cfg</code>, <code>dryrun.cfg</code>, etc. – for other modes.</li>
+</ul>
+<p>These are executed via <code>Server.ExecuteCommand("exec ...")</code> at specific times:</p>
+<ul>
+<li>On plugin load: <code>execifexists MatchZy/config.cfg</code></li>
+<li>On match going live: <code>exec MatchZy/live.cfg</code> (or wingman equivalent)</li>
+<li>On warmup/practice/sleep: corresponding configs as needed.</li>
+</ul>
+<p>You can safely edit these files to tune server settings for your environment.</p>
+<h2 id="important-convars-for-auto-tournament-integration">Important convars for Auto Tournament integration<a class="headerlink" href="#important-convars-for-auto-tournament-integration" title="Permanent link">¶</a></h2>
+<p>The exact names and defaults are defined in <code>ConfigConvars.cs</code>, but these are the key ones for platform integration:</p>
+<ul>
+<li><strong>Match loading</strong></li>
+<li><code>matchzy_loadmatch_url</code><br>
+    Base URL used when you run <code>!match &lt;slug&gt;</code> (or equivalent command).<br>
+    MatchZy will request <code>GET {matchzy_loadmatch_url}/{slug}.json</code>.</li>
+<li>
+<p><code>matchzy_loadmatch_header_key</code>, <code>matchzy_loadmatch_header_value</code><br>
+    Optional extra header for authenticating with your Auto Tournament API (e.g. <code>Authorization: Bearer ...</code>).</p>
+</li>
+<li>
+<p><strong>Match report</strong></p>
+</li>
+<li><code>matchzy_match_report_url</code><br>
+    If set, MatchZy will POST match reports here at the end of maps/series.</li>
+<li>
+<p><code>matchzy_match_report_header_key</code>, <code>matchzy_match_report_header_value</code><br>
+    Optional custom header to secure the report endpoint.</p>
+</li>
+<li>
+<p><strong>Demo recording &amp; upload</strong></p>
+</li>
+<li><code>matchzy_demo_recording_enabled</code> (boolean, default: <code>true</code>)<br>
+    Enable/disable automatic GOTV demo recording. When disabled:<ul>
+<li>No demo files are created</li>
+<li>Server restarts in ~10s after match ends (vs 60-90s)</li>
+<li>Significantly faster tournament turnaround</li>
+</ul>
+</li>
+<li><code>matchzy_demo_upload_url</code><br>
+    If set, MatchZy will upload <code>.dem</code> files here after each map.</li>
+<li><code>matchzy_demo_upload_header_key</code>, <code>matchzy_demo_upload_header_value</code><br>
+    Optional custom header for the demo upload API.</li>
+</ul>
+<p><strong>Performance tip:</strong> Match end delays are smart based on configuration:
+  - Recording disabled: ~10s restart
+  - Recording enabled, no upload URL: ~25-35s restart (local only)
+  - Recording enabled with upload URL: ~60-90s restart (waits for upload)</p>
+<ul>
+<li><strong>Tournament status (used by the safe auto‑updater)</strong></li>
+<li><code>matchzy_tournament_status</code><br>
+    String status that MatchZy keeps up to date as the server runs:<ul>
+<li><code>idle</code>, <code>loading</code>, <code>warmup</code>, <code>knife</code>, <code>live</code>, <code>paused</code>, <code>halftime</code>, <code>postgame</code>, <code>error</code>.</li>
+</ul>
+</li>
+<li><code>matchzy_tournament_match</code><br>
+    Slug/identifier for the active match (e.g. <code>r1m1</code>, <code>bo3_final_2</code>).</li>
+<li><code>matchzy_tournament_updated</code><br>
+    Unix timestamp (as a string) for when the tournament status was last changed.</li>
+</ul>
+<p>These are primarily useful for <strong>external automation</strong> and for the built‑in safe auto‑updater:
+  - The updater <strong>never checks for updates or restarts</strong> while status is one of:
+    <code>loading</code>, <code>warmup</code>, <code>knife</code>, <code>live</code>, <code>paused</code>, <code>halftime</code>.
+  - Once the server is <code>idle</code>, <code>postgame</code> or <code>error</code>, it:
+    - Checks Steam’s <code>UpToDateCheck</code> API to see if a new CS2 build is required.
+    - Logs a marker when an update is available:<br>
+<code>[MATCHZY_UPDATE_AVAILABLE] required_version=&lt;number&gt;</code>
+    - Later, when it is safe to restart, it kicks human players and logs:<br>
+<code>[MATCHZY_UPDATE_SHUTDOWN] required_version=&lt;number&gt;</code><br>
+      before executing <code>quit</code> so your process manager can restart the server.</p>
+<p>Consult the shipped <code>cfg/MatchZy/config.cfg</code> for the up‑to‑date list and defaults.</p>
+<h2 id="enhanced-features-configuration">Enhanced features configuration<a class="headerlink" href="#enhanced-features-configuration" title="Permanent link">¶</a></h2>
+<p>MatchZy Enhanced includes several new features to improve player experience and match flow. All features are disabled by default for safety and must be explicitly enabled.</p>
+<h3 id="auto-ready-system">Auto-Ready System<a class="headerlink" href="#auto-ready-system" title="Permanent link">¶</a></h3>
+<p>Automatically marks players as ready when they join the match.</p>
+<ul>
+<li><strong><code>matchzy_autoready_enabled</code></strong> (<code>0</code>/<code>1</code>, default: <code>0</code>)<br>
+  Enable/disable automatic ready marking on player join.<br>
+  Players can still use <code>.unready</code> to opt-out.<br>
+  Match starts when all required players are ready.</li>
+</ul>
+<p><strong>Use case:</strong> Fast-paced tournaments where players are expected to be ready immediately.</p>
+<p><strong>Example:</strong>
+  </p><div class="language-cfg highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="na">matchzy_autoready_enabled "1"</span>
+</span></code></pre></div><p></p>
+<h3 id="enhanced-pause-system">Enhanced Pause System<a class="headerlink" href="#enhanced-pause-system" title="Permanent link">¶</a></h3>
+<p>Improved pause controls with limits and coordination requirements.</p>
+<ul>
+<li><strong><code>matchzy_both_teams_unpause_required</code></strong> (<code>0</code>/<code>1</code>, default: <code>1</code>)<br>
+  Require both teams to type <code>.unpause</code> to resume (non-admin pauses only).<br>
+  If <code>0</code>, any team can unpause immediately.</li>
+</ul>
+<p><strong>Use case:</strong> Competitive matches where both teams should agree to resume.</p>
+<ul>
+<li><strong><code>matchzy_max_pauses_per_team</code></strong> (integer, default: <code>0</code>)<br>
+  Maximum number of pauses allowed per team.<br>
+<code>0</code> = unlimited pauses.<br>
+  Applies to <strong>both</strong> MatchZy‑managed pauses (<code>.pause</code>/<code>.p</code>, <code>.tech</code>) and <strong>tactical timeouts</strong> (<code>.tac</code>) when they are triggered by players.<br>
+  Does <strong>not</strong> apply to admin force‑pauses/force‑unpauses.</li>
+</ul>
+<p><strong>Use case:</strong> Set to <code>2</code> or <code>3</code> for competitive leagues to prevent pause abuse across all pause types.</p>
+<ul>
+<li><strong><code>matchzy_pause_duration</code></strong> (seconds, default: <code>0</code>)<br>
+  Maximum pause duration before automatic unpause.<br>
+<code>0</code> = no time limit.<br>
+  Does not apply to admin pauses.</li>
+</ul>
+<p><strong>Use case:</strong> Set to <code>300</code> (5 minutes) for fast-paced tournaments.</p>
+<p><strong>Example:</strong>
+  </p><div class="language-cfg highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="na">matchzy_both_teams_unpause_required "1"</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="na">matchzy_max_pauses_per_team "2"</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="na">matchzy_pause_duration "300"</span>
+</span></code></pre></div><p></p>
+<h4 id="example-use-pluginmanaged-pauses-instead-of-native-tactical-timeouts">Example: Use plugin‑managed pauses instead of native tactical timeouts<a class="headerlink" href="#example-use-pluginmanaged-pauses-instead-of-native-tactical-timeouts" title="Permanent link">¶</a></h4>
+<p>If you want <code>.pause</code> / <code>.p</code> to use MatchZy’s <strong>plugin‑managed pause system</strong> (and <strong>not</strong> consume CS2 tactical timeouts), configure:</p>
+<div class="language-cfg highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="na">// Use plugin pause system for .pause/.p instead of native tactical timeout</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="na">matchzy_use_pause_command_for_tactical_pause "0"</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="na">// Allow up to 3 pauses per team, tracked by MatchZy</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="na">matchzy_max_pauses_per_team "3"</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="na">// Optional</span><span class="o">:</span><span class="w"> </span><span class="s">automatically unpause after 60 seconds</span>
+</span><span id="__span-2-8"><a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="na">matchzy_pause_duration "60"</span>
+</span></code></pre></div>
+<p>With this setup:</p>
+<ul>
+<li><code>.pause</code> / <code>.p</code> calls <code>mp_pause_match</code> and is limited only by <code>matchzy_max_pauses_per_team</code>.</li>
+<li><code>.tac</code> still uses the <strong>native CS2 tactical timeout system</strong> (<code>timeout_terrorist_start</code> / <code>timeout_ct_start</code>) and may be further limited by Valve cvars like <code>mp_team_timeout_max</code>. For fully predictable tactical timeout counts, keep <code>mp_team_timeout_max</code> in sync with <code>matchzy_max_pauses_per_team</code> (or higher).</li>
+</ul>
+<p><strong>New command aliases:</strong>
+- <code>.p</code> → <code>.pause</code>
+- <code>.up</code> → <code>.unpause</code></p>
+<h3 id="side-selection-timer">Side Selection Timer<a class="headerlink" href="#side-selection-timer" title="Permanent link">¶</a></h3>
+<p>Configurable timer for side selection after knife round.</p>
+<ul>
+<li>
+<p><strong><code>matchzy_side_selection_enabled</code></strong> (<code>0</code>/<code>1</code>, default: <code>1</code>)<br>
+  Enable/disable side selection timer.<br>
+  If disabled, players have unlimited time to choose.</p>
+</li>
+<li>
+<p><strong><code>matchzy_side_selection_time</code></strong> (seconds, default: <code>60</code>)<br>
+  Time allowed for side selection after winning knife.<br>
+  If timer expires without choice, random side is selected.</p>
+</li>
+</ul>
+<p><strong>Use case:</strong> Set to <code>90</code>-<code>120</code> for high-stakes tournament matches.</p>
+<p><strong>Example:</strong>
+  </p><div class="language-cfg highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="na">matchzy_side_selection_enabled "1"</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="na">matchzy_side_selection_time "60"</span>
+</span></code></pre></div><p></p>
+<p><strong>Commands:</strong> <code>.ct</code>, <code>.t</code>, <code>.stay</code>, <code>.swap</code></p>
+<h3 id="early-match-termination-gg-command">Early Match Termination (<code>.gg</code> Command)<a class="headerlink" href="#early-match-termination-gg-command" title="Permanent link">¶</a></h3>
+<p>Allows teams to forfeit matches with team consensus.</p>
+<ul>
+<li><strong><code>matchzy_gg_enabled</code></strong> (<code>0</code>/<code>1</code>, default: <code>0</code>)<br>
+  Enable/disable the <code>.gg</code> forfeit command.<br>
+  When enough players type <code>.gg</code>, opposing team wins automatically.</li>
+</ul>
+<p><strong>Use case:</strong> Enable for scrims/practice matches where quick forfeits are acceptable.</p>
+<ul>
+<li><strong><code>matchzy_gg_threshold</code></strong> (float <code>0.0</code>-<code>1.0</code>, default: <code>0.8</code>)<br>
+  Percentage of team required to vote for forfeit.<br>
+<code>0.8</code> = 80% (e.g., 4 out of 5 players in 5v5).<br>
+  Votes reset each round.</li>
+</ul>
+<p><strong>Use case:</strong> Set to <code>1.0</code> (100%) for ranked/competitive matches.</p>
+<ul>
+<li><strong><code>matchzy_gg_min_score_diff</code></strong> (integer, default: <code>0</code>)<br>
+  Minimum round <strong>score difference</strong> required for the losing team to be allowed to use <code>.gg</code>.<br>
+<code>0</code> = disabled (no score constraint).<br>
+  Example: <code>6</code> means a team can only forfeit with <code>.gg</code> when they are <strong>losing by at least 6 rounds</strong> (e.g. 0–6, 1–7, 2–8, …).<br>
+  The check is always evaluated from the perspective of the team calling <code>.gg</code>.</li>
+</ul>
+<p><strong>Use case:</strong> Prevent too‑early surrenders (e.g. only allow <code>.gg</code> at 6‑0 or worse).</p>
+<p><strong>Example:</strong>
+  </p><div class="language-cfg highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="na">matchzy_gg_enabled "1"</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="na">matchzy_gg_threshold "0.8"</span>
+</span></code></pre></div><p></p>
+<p><strong>Command:</strong> <code>.gg</code></p>
+<h3 id="ffw-forfeitwalkover-system">FFW (Forfeit/Walkover) System<a class="headerlink" href="#ffw-forfeitwalkover-system" title="Permanent link">¶</a></h3>
+<p>Automatic forfeit when entire team leaves the server.</p>
+<ul>
+<li><strong><code>matchzy_ffw_enabled</code></strong> (<code>0</code>/<code>1</code>, default: <code>0</code>)<br>
+  Enable/disable automatic forfeit system.<br>
+  When all players from a team disconnect, a timer starts.<br>
+  If no one returns before timer expires, opposing team wins by forfeit.</li>
+</ul>
+<p><strong>Use case:</strong> Enable for online tournaments to handle disconnections fairly.</p>
+<ul>
+<li><strong><code>matchzy_ffw_time</code></strong> (seconds, default: <code>240</code>)<br>
+  Time before forfeit is declared (4 minutes default).<br>
+  Players are warned every minute.<br>
+  Timer cancels automatically if anyone rejoins.</li>
+</ul>
+<p><strong>Use case:</strong> Adjust based on expected reconnection time in your tournaments.</p>
+<p><strong>Example:</strong>
+  </p><div class="language-cfg highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="na">matchzy_ffw_enabled "1"</span>
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a><span class="na">matchzy_ffw_time "240"  // 4 minutes</span>
+</span></code></pre></div><p></p>
+<h3 id="configuration-templates">Configuration templates<a class="headerlink" href="#configuration-templates" title="Permanent link">¶</a></h3>
+<p><strong>Fast-paced tournament:</strong>
+</p><div class="language-cfg highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="na">matchzy_autoready_enabled "1"</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="na">matchzy_both_teams_unpause_required "1"</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="na">matchzy_max_pauses_per_team "2"</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="na">matchzy_pause_duration "300"</span>
+</span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a><span class="na">matchzy_side_selection_time "45"</span>
+</span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="na">matchzy_gg_enabled "0"</span>
+</span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="na">matchzy_ffw_enabled "1"</span>
+</span><span id="__span-6-8"><a id="__codelineno-6-8" name="__codelineno-6-8" href="#__codelineno-6-8"></a><span class="na">matchzy_ffw_time "180"  // 3 minutes</span>
+</span></code></pre></div><p></p>
+<p><strong>Competitive league:</strong>
+</p><div class="language-cfg highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="na">matchzy_autoready_enabled "0"</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="na">matchzy_both_teams_unpause_required "1"</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="na">matchzy_max_pauses_per_team "3"</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="na">matchzy_pause_duration "0"  // No limit</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="na">matchzy_side_selection_time "90"</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a><span class="na">matchzy_gg_enabled "0"</span>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="na">matchzy_ffw_enabled "1"</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="na">matchzy_ffw_time "300"  // 5 minutes</span>
+</span></code></pre></div><p></p>
+<p><strong>Casual scrims:</strong>
+</p><div class="language-cfg highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="na">matchzy_autoready_enabled "1"</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a><span class="na">matchzy_both_teams_unpause_required "0"</span>
+</span><span id="__span-8-3"><a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a><span class="na">matchzy_max_pauses_per_team "0"  // Unlimited</span>
+</span><span id="__span-8-4"><a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a><span class="na">matchzy_pause_duration "0"</span>
+</span><span id="__span-8-5"><a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a><span class="na">matchzy_side_selection_time "60"</span>
+</span><span id="__span-8-6"><a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a><span class="na">matchzy_gg_enabled "1"</span>
+</span><span id="__span-8-7"><a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a><span class="na">matchzy_gg_threshold "0.8"</span>
+</span><span id="__span-8-8"><a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a><span class="na">matchzy_ffw_enabled "0"</span>
+</span></code></pre></div><p></p>
+<h2 id="json-match-config-from-auto-tournament">JSON match config (from Auto Tournament)<a class="headerlink" href="#json-match-config-from-auto-tournament" title="Permanent link">¶</a></h2>
+<p>When used with MatchZy Auto Tournament, MatchZy expects to load matches from a JSON document that looks roughly like:</p>
+<div class="language-json highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="p">{</span>
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="w">  </span><span class="nt">"matchid"</span><span class="p">:</span><span class="w"> </span><span class="mi">12345</span><span class="p">,</span>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w">  </span><span class="nt">"num_maps"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span>
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">  </span><span class="nt">"maplist"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="s2">"de_inferno"</span><span class="p">,</span><span class="w"> </span><span class="s2">"de_mirage"</span><span class="p">,</span><span class="w"> </span><span class="s2">"de_nuke"</span><span class="p">],</span>
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">  </span><span class="nt">"team1"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"team-1"</span><span class="p">,</span>
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Team One"</span><span class="p">,</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">    </span><span class="nt">"players"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">      </span><span class="nt">"STEAM_1:1:111"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Player One"</span><span class="p">,</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">      </span><span class="nt">"STEAM_1:1:222"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Player Two"</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a><span class="w">  </span><span class="nt">"team2"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a><span class="w">    </span><span class="nt">"id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"team-2"</span><span class="p">,</span>
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="w">    </span><span class="nt">"name"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Team Two"</span><span class="p">,</span>
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a><span class="w">    </span><span class="nt">"players"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span>
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="w">      </span><span class="nt">"STEAM_1:1:333"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Player Three"</span><span class="p">,</span>
+</span><span id="__span-9-18"><a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a><span class="w">      </span><span class="nt">"STEAM_1:1:444"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Player Four"</span>
+</span><span id="__span-9-19"><a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a><span class="w">    </span><span class="p">}</span>
+</span><span id="__span-9-20"><a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a><span class="w">  </span><span class="p">},</span>
+</span><span id="__span-9-21"><a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a><span class="w">  </span><span class="nt">"simulation"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span>
+</span><span id="__span-9-22"><a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a><span class="p">}</span>
+</span></code></pre></div>
+<p>The plugin validates the structure and then maps it into an internal <code>MatchConfig</code> object.</p>
+<h3 id="important-json-fields">Important JSON fields<a class="headerlink" href="#important-json-fields" title="Permanent link">¶</a></h3>
+<ul>
+<li>
+<p><code>matchid</code> (<code>match_id</code> in internal config)<br>
+  Numeric identifier used in logs, events, reports and demo upload headers.</p>
+</li>
+<li>
+<p><code>num_maps</code><br>
+  The series length (e.g. <code>1</code>, <code>3</code>, <code>5</code>).</p>
+</li>
+<li>
+<p><code>maplist</code> (internally <code>MapsPool</code>)<br>
+  Array of map names. The enhanced fork <strong>does not use in‑game veto</strong>; instead:</p>
+</li>
+<li>It takes the first <code>num_maps</code> entries from <code>maplist</code> as the final <code>Maplist</code>.</li>
+<li>
+<p>It also prepares <code>MapSides</code> based on <code>match_side_type</code> (see below).</p>
+</li>
+<li>
+<p><code>team1</code>, <code>team2</code>:</p>
+</li>
+<li><code>id</code>: Platform‑level team id (string).</li>
+<li><code>name</code>: Team display name.</li>
+<li>
+<p><code>players</code>: Object mapping <code>SteamID</code> → <code>name</code>.<br>
+    This is especially important in <strong>simulation mode</strong>, where each player is represented by a bot.</p>
+</li>
+<li>
+<p>(optional) <code>admins</code><br>
+  Top‑level array of Steam64 IDs that should be treated as <strong>match‑local admins</strong>. These admins
+  are valid only for this match and are checked in addition to any global admins defined via
+  CSSharp or <code>cfg/MatchZy/admins.json</code>.</p>
+</li>
+<li>
+<p><code>wingman</code><br>
+  Boolean; if <code>true</code>, MatchZy sets up the match in wingman mode (2v2).</p>
+</li>
+<li>
+<p><code>simulation</code><br>
+  Boolean; when <code>true</code>, enables <strong>simulation mode</strong> (see the separate <code>Simulation mode</code> page).</p>
+</li>
+<li>
+<p><code>maxRounds</code> / <code>overtimeMode</code> / <code>overtimeSegments</code><br>
+  High-level overtime / regulation configuration, typically provided by the tournament backend:</p>
+</li>
+<li><code>maxRounds</code> (number, optional)  <ul>
+<li>When present and &gt; 0, MatchZy maps this directly to <code>mp_maxrounds</code> when the match goes live.</li>
+</ul>
+</li>
+<li><code>overtimeMode</code> (<code>"enabled"</code> | <code>"disabled"</code>, optional)  <ul>
+<li><code>"enabled"</code> → MatchZy sets <code>mp_overtime_enable 1</code>.  </li>
+<li><code>"disabled"</code> → MatchZy sets <code>mp_overtime_enable 0</code> (no overtime; regulation only).</li>
+</ul>
+</li>
+<li>
+<p><code>overtimeSegments</code> (number, optional)  </p>
+<ul>
+<li>Parsed and stored on the match; we <strong>do not</strong> currently enforce a hard “max OT segments” cutoff (CS2 continues OT as normal).  </li>
+<li>Used to control how <strong>ties are resolved</strong> at the end of a map:</li>
+<li>If <code>overtimeMode: "disabled"</code> and <code>overtimeSegments</code> is <strong>missing or 0</strong>: no OT is played, and a tied final score is broken by comparing <strong>total team damage</strong> (winner = higher damage; if damage is also tied, the result is a true draw).</li>
+<li>If <code>overtimeMode</code> is not <code>"disabled"</code> and <code>overtimeSegments &gt; 0</code>: OT may still run as usual, but if the map ever ends tied, the same <strong>damage-based tiebreak</strong> is applied instead of reporting a draw.</li>
+<li>In all other cases (no <code>overtimeSegments</code> provided, or negative), tied final scores are treated as <strong>draws</strong>.</li>
+</ul>
+</li>
+<li>
+<p><code>match_side_type</code><br>
+  Controls how sides are determined:</p>
+</li>
+<li><code>"standard"</code> / <code>"always_knife"</code> – sides decided via knife (or simulated knife in simulation mode).</li>
+<li><code>"random"</code> – random side assignment per map.</li>
+<li>Other values default to <code>"team1_ct"</code> (team1 starts CT).</li>
+</ul>
+<h3 id="deprecated-vetorelated-fields">Deprecated veto‑related fields<a class="headerlink" href="#deprecated-vetorelated-fields" title="Permanent link">¶</a></h3>
+<p>For compatibility with older MatchZy / Get5‑style configs, the internal <code>MatchConfig</code> still has:</p>
+<ul>
+<li><code>maps_left_in_veto_pool</code></li>
+<li><code>map_ban_order</code> (<code>veto_mode</code> in older JSON)</li>
+<li><code>skip_veto</code></li>
+</ul>
+<p>However, this enhanced fork has <strong>removed in‑game veto entirely</strong>:</p>
+<ul>
+<li>Maps are <strong>fully controlled by the JSON</strong> provided by Auto Tournament.</li>
+<li>These fields are <strong>parsed but ignored</strong>; you can stop sending them from the platform.</li>
+</ul>
+<h2 id="simulationspecific-configuration">Simulation‑specific configuration<a class="headerlink" href="#simulationspecific-configuration" title="Permanent link">¶</a></h2>
+<p>When <code>"simulation": true</code>:</p>
+<ul>
+<li>MatchZy will:</li>
+<li>Treat the match as fully real from the plugin’s perspective.</li>
+<li>Spawn bots that represent the configured players.</li>
+<li>Use the SteamIDs and names from the JSON in <strong>all events, reports and stats</strong>.</li>
+<li>Drive a time‑based ready flow and simulated knife/side selection.</li>
+<li>
+<p>Mark match reports as <code>simulated: true</code>.</p>
+</li>
+<li>
+<p>Optional: <code>simulation_timescale</code>  </p>
+</li>
+<li>A numeric multiplier (e.g. <code>1.0</code>, <code>1.5</code>, <code>2.0</code>) that controls the CS2 <code>host_timescale</code> while the simulation is running.</li>
+<li>Only applied when <code>simulation: true</code>. Normal (human) matches always run with <code>host_timescale 1</code> and <code>sv_cheats 0</code>.</li>
+<li>Values are clamped between <code>0.1</code> and <code>4.0</code> internally to prevent extreme settings.</li>
+<li>
+<p>When a simulated match starts, MatchZy will:</p>
+<ul>
+<li>Set <code>sv_cheats 1</code> and <code>host_timescale</code> to the configured <code>simulation_timescale</code>.</li>
+<li>Re‑enforce <code>sv_cheats 1</code> and the configured <code>host_timescale</code> at the <strong>start of every round</strong> so map changes or external configs cannot drop the match out of simulation speed.</li>
+<li>Reset back to <code>host_timescale 1</code> and <code>sv_cheats 0</code> automatically when the simulated series ends, before the server returns to idle.</li>
+</ul>
+</li>
+<li>
+<p>Normal (non‑simulation, non‑practice) matches:</p>
+</li>
+<li>At the start of warmup and at the beginning of each round, MatchZy explicitly enforces <code>sv_cheats 0</code> and <code>host_timescale 1</code>.</li>
+<li>
+<p>This guarantees that cheats/timescale from previous simulation or practice sessions do <strong>not</strong> leak into real matches (including multi‑map series like BO3/BO5).</p>
+</li>
+<li>
+<p>The JSON <strong>must</strong> provide players for at least one of <code>team1.players</code> or <code>team2.players</code>.<br>
+  If both are missing/empty, MatchZy will log an error and refuse to start the match.</p>
+</li>
+</ul>
+<p>See <strong>Simulation mode</strong> for a full walkthrough and examples.</p>
+<hr>
+<h2 id="example-configurations">Example Configurations<a class="headerlink" href="#example-configurations" title="Permanent link">¶</a></h2>
+<p>Quick configuration templates for common use cases:</p>
+<h3 id="tournament-fast-paced-online">Tournament: Fast-Paced Online<a class="headerlink" href="#tournament-fast-paced-online" title="Permanent link">¶</a></h3>
+<div class="language-cfg highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="na">matchzy_autoready_enabled "1"</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="na">matchzy_max_pauses_per_team "2"</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="na">matchzy_pause_duration "300"</span>
+</span><span id="__span-10-4"><a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="na">matchzy_side_selection_time "45"</span>
+</span><span id="__span-10-5"><a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="na">matchzy_gg_enabled "0"</span>
+</span><span id="__span-10-6"><a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="na">matchzy_ffw_enabled "1"</span>
+</span><span id="__span-10-7"><a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="na">matchzy_ffw_time "180"</span>
+</span></code></pre></div>
+<h3 id="tournament-professional-league">Tournament: Professional League<a class="headerlink" href="#tournament-professional-league" title="Permanent link">¶</a></h3>
+<div class="language-cfg highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a><span class="na">matchzy_autoready_enabled "0"</span>
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a><span class="na">matchzy_max_pauses_per_team "3"</span>
+</span><span id="__span-11-3"><a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a><span class="na">matchzy_pause_duration "0"</span>
+</span><span id="__span-11-4"><a id="__codelineno-11-4" name="__codelineno-11-4" href="#__codelineno-11-4"></a><span class="na">matchzy_side_selection_time "90"</span>
+</span><span id="__span-11-5"><a id="__codelineno-11-5" name="__codelineno-11-5" href="#__codelineno-11-5"></a><span class="na">matchzy_gg_enabled "0"</span>
+</span><span id="__span-11-6"><a id="__codelineno-11-6" name="__codelineno-11-6" href="#__codelineno-11-6"></a><span class="na">matchzy_ffw_enabled "1"</span>
+</span><span id="__span-11-7"><a id="__codelineno-11-7" name="__codelineno-11-7" href="#__codelineno-11-7"></a><span class="na">matchzy_ffw_time "300"</span>
+</span></code></pre></div>
+<h3 id="practice-casual-scrims">Practice: Casual Scrims<a class="headerlink" href="#practice-casual-scrims" title="Permanent link">¶</a></h3>
+<div class="language-cfg highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="na">matchzy_autoready_enabled "1"</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a><span class="na">matchzy_both_teams_unpause_required "0"</span>
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="na">matchzy_max_pauses_per_team "0"</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="na">matchzy_pause_duration "0"</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="na">matchzy_gg_enabled "1"</span>
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="na">matchzy_gg_threshold "0.8"</span>
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="na">matchzy_ffw_enabled "0"</span>
+</span></code></pre></div>
+<h3 id="ranked-matchmaking">Ranked: Matchmaking<a class="headerlink" href="#ranked-matchmaking" title="Permanent link">¶</a></h3>
+<div class="language-cfg highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a><span class="na">matchzy_autoready_enabled "0"</span>
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a><span class="na">matchzy_max_pauses_per_team "1"</span>
+</span><span id="__span-13-3"><a id="__codelineno-13-3" name="__codelineno-13-3" href="#__codelineno-13-3"></a><span class="na">matchzy_pause_duration "180"</span>
+</span><span id="__span-13-4"><a id="__codelineno-13-4" name="__codelineno-13-4" href="#__codelineno-13-4"></a><span class="na">matchzy_gg_enabled "0"</span>
+</span><span id="__span-13-5"><a id="__codelineno-13-5" name="__codelineno-13-5" href="#__codelineno-13-5"></a><span class="na">matchzy_ffw_enabled "1"</span>
+</span><span id="__span-13-6"><a id="__codelineno-13-6" name="__codelineno-13-6" href="#__codelineno-13-6"></a><span class="na">matchzy_ffw_time "240"</span>
+</span></code></pre></div>
+<h2 id="center-html-notifications">Center HTML Notifications<a class="headerlink" href="#center-html-notifications" title="Permanent link">¶</a></h2>
+<p>MatchZy can display important match events in the center of players' screens for better visibility.</p>
+<p><strong>Configuration:</strong>
+</p><div class="language-cfg highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a><span class="na">matchzy_center_html_notifications "1"  // 1</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s">enabled, 0 = disabled (default: 1)</span>
+</span></code></pre></div><p></p>
+<p><strong>What gets displayed:</strong></p>
+<ul>
+<li><strong>Global notifications</strong> (all players):</li>
+<li>Match live announcement with team names</li>
+<li>Pause/unpause status</li>
+<li>
+<p>Side selection after knife round</p>
+</li>
+<li>
+<p><strong>Personal notifications</strong> (individual players):</p>
+</li>
+<li>Ready/unready status with instructions</li>
+<li>
+<p>Auto-ready notifications</p>
+</li>
+<li>
+<p><strong>Team-specific notifications</strong> (only relevant team):</p>
+</li>
+<li>
+<p>Unpause confirmation requests</p>
+</li>
+<li>
+<p><strong>Countdown timers</strong>:</p>
+</li>
+<li>Pause duration (if limit set)</li>
+<li>Side selection timer</li>
+<li>Server restart countdown</li>
+</ul>
+<p><strong>Benefits:</strong>
+- Important messages don't get lost in chat
+- Clean, professional tournament-style notifications
+- Automatically excludes bots to avoid console spam
+- Works alongside chat messages</p>
+<hr>
+<h2 id="event-reliability-retry-system">Event reliability &amp; retry system<a class="headerlink" href="#event-reliability-retry-system" title="Permanent link">¶</a></h2>
+<p>MatchZy Enhanced includes a <strong>bulletproof event delivery system</strong> that ensures no match data is lost, even during API downtime or network issues.</p>
+<p><strong>Configuration:</strong>
+</p><div class="language-cfg highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a><span class="na">// Set server ID first</span>
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a><span class="na">matchzy_server_id "s_1"</span>
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a><span class="na">// Then set remote log URL</span>
+</span><span id="__span-15-5"><a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a><span class="na">matchzy_remote_log_url "https</span><span class="o">:</span><span class="s">//your-api/events"</span>
+</span><span id="__span-15-6"><a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>
+</span><span id="__span-15-7"><a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a><span class="na">// Optional</span><span class="o">:</span><span class="w"> </span><span class="s">Authentication headers</span>
+</span><span id="__span-15-8"><a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a><span class="na">matchzy_remote_log_header_key "X-MatchZy-Token"</span>
+</span><span id="__span-15-9"><a id="__codelineno-15-9" name="__codelineno-15-9" href="#__codelineno-15-9"></a><span class="na">matchzy_remote_log_header_value "your_secret_token"</span>
+</span></code></pre></div><p></p>
+<p><strong>How it works:</strong>
+- Failed events are automatically queued and retried every 30s with exponential backoff
+- Up to 20 retry attempts before marking as failed
+- Zero data loss during API downtime or network issues</p>
+<p><strong>Console commands:</strong></p>
+<ul>
+<li><code>matchzy_get_pending_events</code> (admin only) – Shows how many events are queued for retry</li>
+<li><code>matchzy_clear_event_queue</code> (admin only) – Clears all pending/failed events (automatically called when URL changes)</li>
+<li><code>matchzy_get_match_stats &lt;matchId&gt;</code> – Returns complete match statistics as JSON from local database</li>
+</ul>
+<p><strong>Benefits:</strong> Zero data loss, automatic recovery, no manual intervention needed.</p>
+<p><strong>For API developers:</strong> Your API just needs to return HTTP 200 OK when events are stored successfully – MatchZy handles all retries automatically.</p>
+<hr>
+<h2 id="debugging-logging">Debugging &amp; logging<a class="headerlink" href="#debugging-logging" title="Permanent link">¶</a></h2>
+<p>These options control how much diagnostic information MatchZy prints, which is very useful when collecting logs for bug reports.</p>
+<h3 id="matchzy_debug_chat">matchzy_debug_chat<a class="headerlink" href="#matchzy_debug_chat" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Type:</strong> <code>0</code>/<code>1</code> (boolean)  </li>
+<li><strong>Default:</strong> <code>0</code>  </li>
+<li><strong>Description:</strong> When enabled, MatchZy sends extra debug/info messages to <strong>in‑game chat</strong> (for example webhook send status, certain state transitions, etc.).  </li>
+<li><strong>Use case:</strong> Enable temporarily while testing or when you want players/admins to see high‑level status without opening the server console.</li>
+</ul>
+<h3 id="matchzy_debug_console">matchzy_debug_console<a class="headerlink" href="#matchzy_debug_console" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Type:</strong> <code>0</code>/<code>1</code> (boolean)  </li>
+<li><strong>Default:</strong> <code>1</code>  </li>
+<li><strong>Description:</strong> Controls whether MatchZy writes <strong>verbose debug logs</strong> to the server console. These logs include things like:</li>
+<li>Ready / auto‑ready flow and match start decisions  </li>
+<li>Pause and tactical timeout handling (including <code>.tac</code> + pause limits)  </li>
+<li><code>.gg</code> vote state and min score‑difference checks  </li>
+<li>FFW timers and cancel/start logic  </li>
+<li>Config reloads and key lifecycle events  </li>
+<li><strong>Use case:</strong> Leave enabled on most servers. If you need <em>very</em> quiet logs you can set it to <code>0</code>, but for support/issue reports you’ll almost always want this on.</li>
+</ul>
+<hr>
+<h2 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">¶</a></h2>
+<ul>
+<li>Use <code>cfg/MatchZy/config.cfg</code> to tune plugin‑level options and integration URLs.</li>
+<li>Use the JSON match config (typically produced by MatchZy Auto Tournament) to define:</li>
+<li>Teams, players, maps, series length, side rules, and whether to run in simulation mode.</li>
+<li>Veto is no longer used; the <strong>platform is the source of truth</strong> for maps and sides.</li>
+</ul>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../installation/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Installation">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                Installation
+              </div>
+            </div>
+          </a>
+        
+        
+          
+          <a href="../commands/" class="md-footer__link md-footer__link--next" aria-label="Next: Commands">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              <div class="md-ellipsis">
+                Commands
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+            </div>
+          </a>
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025 Sivert Gullberg Hansen
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/sivert-io/MatchZy" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/n7gHYau7aW" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>

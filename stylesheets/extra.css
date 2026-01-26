@@ -1,0 +1,174 @@
+/* Match the project's Material Design 3 MatchZy Mint theme - matching logo colors */
+
+:root {
+  /* Light mode overrides - matching logo background #D5F4E2 and text #19191B */
+  --md-primary-fg-color: #1A6B5A;        /* Darker mint-teal for light mode (complements logo bg) */
+  --md-primary-fg-color--light: #4EC5A3;  /* Medium mint-teal */
+  --md-primary-fg-color--dark: #0F4A3D;  /* Darkest mint-teal */
+  --md-accent-fg-color: hsl(163, 51%, 54%);         /* Medium mint-teal for accents (works with logo) */
+  --md-typeset-a-color: var(--md-accent-fg-color);  /* Content links use accent color in light mode */
+}
+
+[data-md-color-scheme="slate"] {
+  /* Dark mode */
+  
+  /* Header/Navbar - dark teal-tinted background */
+  --md-primary-fg-color: #1B1F1E;        /* Dark teal-tinted background */
+  --md-primary-fg-color--light: #CFF9F4;
+  --md-primary-fg-color--dark: #0D0F0E;
+  --md-primary-bg-color: #E6E1E5;
+  
+  /* Accent - bright mint-teal for links, buttons, active states */
+  --md-accent-fg-color: hsl(163, 51%, 54%);
+  --md-accent-fg-color--transparent: hsla(163, 51%, 54%, 0.1);
+  
+  /* Background colors with teal hue */
+  --md-default-bg-color: #1B1F1E;        /* Teal-tinted dark background */
+  --md-default-fg-color: #E6E1E5;        /* Same as project text.primary */
+  --md-default-fg-color--light: #CACDD0; /* Teal-tinted secondary text */
+  
+  /* Code block colors with teal hue */
+  --md-code-bg-color: #2A302F;           /* Teal-tinted code background */
+  --md-code-fg-color: #E6E1E5;
+  
+  /* Links - use bright cyan-teal */
+  --md-typeset-a-color: #5EE5D9;
+  
+  /* Table of contents active item */
+  --md-typeset-table-color: #2A302F;
+}
+
+/* Enhanced teal highlights for dark mode */
+[data-md-color-scheme="slate"] {
+  /* Sidebar active nav item */
+  .md-nav__link--active {
+    color: #5EE5D9 !important;
+  }
+  
+  /* Hover states */
+  .md-nav__link:hover {
+    color: #CFF9F4 !important;
+  }
+  
+  /* Search highlights */
+  .md-search-result__meta {
+    background-color: #2A302F;
+  }
+  
+  /* Admonition headers */
+  .md-typeset .admonition-title {
+    background-color: rgba(94, 229, 217, 0.1);
+  }
+}
+
+/* Rounded corners and colors to match project */
+.md-button {
+  border-radius: 44px !important;        /* Match project button radius */
+}
+
+/* Primary button - filled mint-teal */
+.md-button--primary {
+  background-color: #1A6B5A !important;
+  color: white !important;
+  border-color: #1A6B5A !important;
+}
+
+.md-button--primary:hover {
+  background-color: #2D8F6F !important;
+  border-color: #2D8F6F !important;
+}
+
+[data-md-color-scheme="slate"] .md-button--primary {
+  background-color: #5EE5D9 !important;
+  color: #1B1F1E !important;
+  border-color: #5EE5D9 !important;
+}
+
+[data-md-color-scheme="slate"] .md-button--primary:hover {
+  background-color: transparent !important;
+  color: #5EE5D9 !important;
+  border-color: #5EE5D9 !important;
+}
+
+/* Secondary button - outlined mint-teal */
+.md-button:not(.md-button--primary) {
+  color: #1A6B5A !important;
+  border-color: #1A6B5A !important;
+}
+
+.md-button:not(.md-button--primary):hover {
+  background-color: rgba(26, 107, 90, 0.1) !important;
+  border-color: #2D8F6F !important;
+}
+
+[data-md-color-scheme="slate"] .md-button:not(.md-button--primary) {
+  color: #5EE5D9 !important;
+  border-color: #5EE5D9 !important;
+}
+
+[data-md-color-scheme="slate"] .md-button:not(.md-button--primary):hover {
+  background-color: rgba(94, 229, 217, 0.1) !important;
+  border-color: #CFF9F4 !important;
+}
+
+/* Additional teal-tinted backgrounds */
+[data-md-color-scheme="slate"] .md-header {
+  background-color: #1B1F1E;
+}
+
+/* Logo styling */
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 2rem;
+}
+
+/* Clean separator between header and content */
+[data-md-color-scheme="slate"] .md-header {
+  box-shadow: 0 0 0.2rem rgba(0,0,0,.1), 0 0.2rem 0.4rem rgba(0,0,0,.2);
+}
+
+/* Improve sidebar appearance */
+[data-md-color-scheme="slate"] .md-sidebar {
+  background-color: transparent;
+}
+
+/* Better content cards */
+[data-md-color-scheme="slate"] .md-typeset .admonition,
+[data-md-color-scheme="slate"] .md-typeset details {
+  border: none;
+  box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,.05), 0 0 0.05rem rgba(0,0,0,.1);
+}
+
+/* Tabs styling */
+[data-md-color-scheme="slate"] .md-tabs {
+  background-color: #1B1F1E;
+  border-bottom: 0.05rem solid rgba(94, 229, 217, 0.1);
+}
+
+/* Code blocks with subtle borders */
+[data-md-color-scheme="slate"] .md-typeset pre > code {
+  border-radius: 0.5rem;
+}
+
+/* Navigation path breadcrumbs */
+[data-md-color-scheme="slate"] .md-path {
+  color: #CACDD0;
+}
+
+/* Admonition styling to match mkdocs-material style */
+/* Border-left style like the reference documentation */
+.md-typeset .admonition,
+.md-typeset details {
+  border-width: 0;
+  border-left-width: 4px;
+}
+
+/* Only content links (markdown content) use accent color - exclude nav, buttons, etc. */
+.md-typeset a:not(.md-button):not(.md-nav__link):not(.md-header__button):not(.md-footer__link):not(.md-search-result__link) {
+  color: var(--md-accent-fg-color) !important;
+}
+
+.md-typeset a:not(.md-button):not(.md-nav__link):not(.md-header__button):not(.md-footer__link):not(.md-search-result__link):hover {
+  opacity: 0.9;
+}
+

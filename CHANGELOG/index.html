@@ -1,0 +1,2052 @@
+<!DOCTYPE html><html lang="en" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Matchzy Enhanced — an enhanced CS2 MatchZy plugin tailored for tournament automation with MatchZy Auto Tournament.
+">
+      
+      
+        <meta name="author" content="Sivert Gullberg Hansen">
+      
+      
+        <link rel="canonical" href="https://me.sivert.io/CHANGELOG/">
+      
+      
+        <link rel="prev" href="../LLM_QUICK_REFERENCE/">
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../icon.svg">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.1">
+    
+    
+      
+        <title>Changelog - Matchzy Enhanced</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../stylesheets/extra.css">
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  <link href="../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#matchzy-enhanced-changelog" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Matchzy Enhanced" class="md-header__button md-logo" aria-label="Matchzy Enhanced" data-md-component="logo">
+      
+  <img src="../icon.svg" alt="logo">
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Matchzy Enhanced
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Changelog
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to light mode" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3.9 12c0-1.71 1.39-3.1 3.1-3.1h4V7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h4v-1.9H7c-1.71 0-3.1-1.39-3.1-3.1M8 13h8v-2H8zm9-6h-4v1.9h4c1.71 0 3.1 1.39 3.1 3.1s-1.39 3.1-3.1 3.1h-4V17h4a5 5 0 0 0 5-5 5 5 0 0 0-5-5"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to dark mode" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_2" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo" aria-label="Switch to system preference" type="radio" name="__palette" id="__palette_2">
+    
+      <label class="md-header__button md-icon" title="Switch to system preference" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="Share" aria-label="Share" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"></path></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/sivert-io/MatchZy" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    sivert-io/MatchZy
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../installation/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Getting Started
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../integration/" class="md-tabs__link">
+          
+  
+  
+    
+  
+  Integration
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+  
+    
+  
+  Changelog
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Matchzy Enhanced" class="md-nav__button md-logo" aria-label="Matchzy Enhanced" data-md-component="logo">
+      
+  <img src="../icon.svg" alt="logo">
+
+    </a>
+    Matchzy Enhanced
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/sivert-io/MatchZy" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+  </div>
+  <div class="md-source__repository">
+    sivert-io/MatchZy
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2">
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Getting Started
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Getting Started
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Installation
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Configuration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../commands/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Commands
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../center-notifications/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Center Notifications
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3">
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Integration
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Integration
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../integration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Platform Integration
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../LLM_QUICK_REFERENCE/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    LLM Quick Reference
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Changelog
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="matchzy-enhanced-changelog">MatchZy Enhanced Changelog<a class="headerlink" href="#matchzy-enhanced-changelog" title="Permanent link">¶</a></h1>
+<blockquote>
+<p><strong>Note:</strong> Versions 1.0.0+ are MatchZy Enhanced - a fork optimized for tournament automation.
+Original MatchZy versions (0.8.x and earlier) are included below for reference.</p>
+</blockquote>
+<hr>
+<h1 id="1411">1.4.11<a class="headerlink" href="#1411" title="Permanent link">¶</a></h1>
+<h4 id="january-26-2026">January 26, 2026<a class="headerlink" href="#january-26-2026" title="Permanent link">¶</a></h4>
+<h3 id="new-features">✨ New Features<a class="headerlink" href="#new-features" title="Permanent link">¶</a></h3>
+<h4 id="auto-ready-simulation-testing-helper">Auto-Ready Simulation (Testing Helper)<a class="headerlink" href="#auto-ready-simulation-testing-helper" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added a ready-mode simulation helper that <strong>spawns 2 bots (1 CT + 1 T)</strong> during warmup so you can test ready/auto-ready flows without manually joining.</li>
+<li>Added configurable timing and safety knobs to support bots-only testing and reduce flakiness during warmup → knife/live transitions.</li>
+</ul>
+<h4 id="crash-debugging-utilities">Crash / Debugging Utilities<a class="headerlink" href="#crash-debugging-utilities" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added <strong>transition breadcrumbs</strong> via <code>matchzy_crash_debug_breadcrumbs</code> to help diagnose phase-transition issues (warmup/knife/live).</li>
+<li>Added an <strong>event/webhook master switch</strong> via <code>matchzy_events_enabled</code> to simplify isolation when debugging.</li>
+</ul>
+<h3 id="technical-changes">🔧 Technical Changes<a class="headerlink" href="#technical-changes" title="Permanent link">¶</a></h3>
+<ul>
+<li>Improved ready/auto-ready state handling to better emulate real player <code>.ready</code> behavior during automated flows.</li>
+<li>Refactored and expanded the shipped <code>cfg/MatchZy/config.cfg</code> comments for better clarity and usability.</li>
+</ul>
+<hr>
+<h1 id="1410">1.4.10<a class="headerlink" href="#1410" title="Permanent link">¶</a></h1>
+<h4 id="january-25-2026">January 25, 2026<a class="headerlink" href="#january-25-2026" title="Permanent link">¶</a></h4>
+<h3 id="new-features_1">✨ New Features<a class="headerlink" href="#new-features_1" title="Permanent link">¶</a></h3>
+<h4 id="auto-ready-system">Auto-Ready System<a class="headerlink" href="#auto-ready-system" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added <code>matchzy_autoready_enabled</code> to automatically ready players when they join (with <code>.unready</code> opt-out).</li>
+<li>Added configurable tuning:</li>
+<li><code>matchzy_autoready_start_delay</code> (countdown before auto-start)</li>
+<li><code>matchzy_autoready_check_delay</code> (delay after team assignment before checking readiness)</li>
+<li><code>matchzy_autoready_ready_delay</code> (delay before simulating <code>.ready</code>)</li>
+</ul>
+<h3 id="technical-changes_1">🔧 Technical Changes<a class="headerlink" href="#technical-changes_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>Updated match flow readiness tracking in event handlers and ready system to support auto-ready reliably.</li>
+<li>Updated the default config with the new auto-ready cvars and documentation.</li>
+</ul>
+<hr>
+<h1 id="149">1.4.9<a class="headerlink" href="#149" title="Permanent link">¶</a></h1>
+<h4 id="january-24-2026">January 24, 2026<a class="headerlink" href="#january-24-2026" title="Permanent link">¶</a></h4>
+<h3 id="new-features_2">✨ New Features<a class="headerlink" href="#new-features_2" title="Permanent link">¶</a></h3>
+<h4 id="enhanced-notification-system-with-duration-support">Enhanced Notification System with Duration Support<a class="headerlink" href="#enhanced-notification-system-with-duration-support" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Timed notifications</strong>: Messages can now be displayed for a specified duration, enhancing visibility during matches</li>
+<li><strong>Unique notification keys</strong>: Multiple notifications can be managed effectively without overlap</li>
+<li><strong>Duration parameters</strong>: All notification methods now support duration parameters, ensuring messages remain visible for the specified time</li>
+<li>Improved notification management for better user experience during critical match moments</li>
+</ul>
+<h3 id="technical-changes_2">🔧 Technical Changes<a class="headerlink" href="#technical-changes_2" title="Permanent link">¶</a></h3>
+<ul>
+<li>Updated notification system architecture to support timed display</li>
+<li>Implemented unique notification key management to prevent notification conflicts</li>
+<li>Enhanced existing notification methods with duration support</li>
+</ul>
+<hr>
+<h1 id="148">1.4.8<a class="headerlink" href="#148" title="Permanent link">¶</a></h1>
+<h4 id="january-24-2026_1">January 24, 2026<a class="headerlink" href="#january-24-2026_1" title="Permanent link">¶</a></h4>
+<h3 id="new-features_3">✨ New Features<a class="headerlink" href="#new-features_3" title="Permanent link">¶</a></h3>
+<h4 id="center-html-notifications-experimental">Center HTML Notifications (Experimental)<a class="headerlink" href="#center-html-notifications-experimental" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Global notifications</strong>: Match live, pause countdown, side selection displayed to all players</li>
+<li><strong>Personal notifications</strong>: Individual ready/unready status shown to specific players</li>
+<li><strong>Team-specific notifications</strong>: Unpause confirmation requests shown only to relevant team</li>
+<li><strong>Countdown timers</strong>: Live countdowns for pause duration, side selection, and server restart</li>
+<li>Toggle with <code>matchzy_center_html_notifications</code> (default: <strong>disabled</strong> - opt-in feature)</li>
+<li>Clean, professional notifications that don't clutter chat</li>
+</ul>
+<h3 id="bug-fixes">🐛 Bug Fixes<a class="headerlink" href="#bug-fixes" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Fixed</strong>: <code>server_configured</code> event now requires <code>matchzy_server_id</code> to be set before sending</li>
+<li>Prevents events with empty server_id from being sent</li>
+<li>Auto-triggers event when server_id is set after URL configuration</li>
+<li><strong>Fixed</strong>: Event retry queue threading issues</li>
+<li>Database operations now run on main game thread</li>
+<li>Prevents "Invoked on a non-main thread" errors</li>
+<li><strong>Fixed</strong>: Event retry queue now automatically clears when webhook URL changes</li>
+<li>Prevents retrying events to old/wrong URLs</li>
+<li>New URL configuration immediately takes effect</li>
+<li>Added <code>matchzy_clear_event_queue</code> command to manually clear pending events</li>
+</ul>
+<hr>
+<h1 id="140">1.4.0<a class="headerlink" href="#140" title="Permanent link">¶</a></h1>
+<h4 id="january-20-2026">January 20, 2026<a class="headerlink" href="#january-20-2026" title="Permanent link">¶</a></h4>
+<p><strong>🚀 Bulletproof Event Delivery System</strong></p>
+<p>This release introduces a comprehensive <strong>event reliability and retry system</strong> that ensures zero data loss, even during API downtime, network issues, or server crashes.</p>
+<h3 id="new-features_4">✨ New Features<a class="headerlink" href="#new-features_4" title="Permanent link">¶</a></h3>
+<h4 id="event-queue-automatic-retry">Event Queue &amp; Automatic Retry<a class="headerlink" href="#event-queue-automatic-retry" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Automatic queueing</strong>: Failed webhook events are saved to local database</li>
+<li><strong>Background retry</strong>: Processes retry queue every 30 seconds with exponential backoff (30s → 1m → 2m → 4m → 8m → 16m → 32m max)</li>
+<li><strong>Maximum 20 retries</strong> before marking event as <code>failed</code></li>
+<li><strong>Auto-cleanup</strong>: Successfully sent events removed after 7 days</li>
+<li><strong>Database table</strong>: <code>matchzy_event_queue</code> stores event type, data, match ID, retry count, timestamps, and status</li>
+</ul>
+<h4 id="server-registration-event">Server Registration Event<a class="headerlink" href="#server-registration-event" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong><code>server_configured</code> event</strong>: Automatically sent when webhook URL is set or on server startup</li>
+<li>Contains server ID, hostname, plugin version, webhook URL, and timestamp</li>
+<li>Enables API to track active servers and maintain server status database</li>
+<li>Useful for dashboards, health monitoring, and server management</li>
+</ul>
+<h4 id="pull-api-for-data-recovery">Pull API for Data Recovery<a class="headerlink" href="#pull-api-for-data-recovery" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong><code>matchzy_get_match_stats &lt;matchId&gt;</code></strong>: Returns complete match statistics as JSON from local database</li>
+<li><strong><code>matchzy_get_pending_events</code></strong> (admin only): Shows event queue status with breakdown by event type</li>
+<li>Enables tournament platforms to pull missing data directly from CS2 servers</li>
+</ul>
+<h4 id="smart-console-logging">Smart Console Logging<a class="headerlink" href="#smart-console-logging" title="Permanent link">¶</a></h4>
+<ul>
+<li>Visual feedback when events fail and are queued for retry</li>
+<li>Success messages when retried events are delivered</li>
+<li>Example: <code>[MatchZy Events] ✗ FAILED to send 'round_end' (HTTP 500) → Event queued for retry</code></li>
+<li>Example: <code>[MatchZy Events] ✓ Retry successful: 'round_end' (attempt 3)</code></li>
+</ul>
+<h3 id="technical-details">🔧 Technical Details<a class="headerlink" href="#technical-details" title="Permanent link">¶</a></h3>
+<p><strong>Database schema:</strong>
+- New <code>matchzy_event_queue</code> table for both SQLite and MySQL
+- Tracks event type, full JSON payload, match ID, map number, retry count, next retry time, status, and error messages</p>
+<p><strong>Event flow:</strong>
+1. Event POST fails (non-2xx, timeout, or exception) → Auto-queued
+2. Background timer (30s interval) processes pending events
+3. Exponential backoff prevents API overload
+4. Successful delivery → Mark as <code>sent</code> and remove after 7 days
+5. Max retries reached → Mark as <code>failed</code> for manual review</p>
+<p><strong>Benefits:</strong>
+- ✅ Zero data loss during API downtime
+- ✅ Works on managed hosting (Dathost, etc.) - no database exposure needed
+- ✅ Each server manages its own queue independently
+- ✅ No manual intervention required
+- ✅ Pull API available for data recovery</p>
+<h3 id="documentation">📚 Documentation<a class="headerlink" href="#documentation" title="Permanent link">¶</a></h3>
+<ul>
+<li>Updated <code>configuration.md</code> with event reliability section</li>
+<li>Updated <code>commands.md</code> with new commands and permission reference</li>
+<li>Updated <code>integration.md</code> with event reliability details</li>
+</ul>
+<hr>
+<h1 id="142">1.4.2<a class="headerlink" href="#142" title="Permanent link">¶</a></h1>
+<h4 id="january-20-2026_1">January 20, 2026<a class="headerlink" href="#january-20-2026_1" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Localized match winner messages</strong>: Added <code>matchzy.match.won</code> localization key to all 12 supported languages (English, German, Spanish, French, Hungarian, Japanese, Portuguese BR/PT, Russian, Uzbek, Chinese Simplified/Traditional)</li>
+<li><strong>Enhanced kick messages</strong>: Players now see the match winner message 3 times in different colors (Lime → Green → Yellow) with a 5-second delay before being kicked, ensuring they can read the result even if the disconnect popup doesn't show the reason</li>
+<li><strong>Improved side selection timer logic</strong>: Enhanced chat reminders and timer handling for better player awareness</li>
+</ul>
+<h1 id="141">1.4.1<a class="headerlink" href="#141" title="Permanent link">¶</a></h1>
+<h4 id="january-20-2026_2">January 20, 2026<a class="headerlink" href="#january-20-2026_2" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Refactored event retry timer logic</strong>: Fixed potential timer duplication issues by using a repeating timer pattern with proper flags to prevent multiple instances</li>
+<li><strong>Improved cleanup timer</strong>: Enhanced old event cleanup logic for better reliability</li>
+<li><strong>Fixed changelog extraction</strong>: Improved Discord webhook changelog generation to correctly handle release commits and non-existent tags</li>
+</ul>
+<hr>
+<h1 id="135">1.3.5<a class="headerlink" href="#135" title="Permanent link">¶</a></h1>
+<h4 id="january-20-2026_3">January 20, 2026<a class="headerlink" href="#january-20-2026_3" title="Permanent link">¶</a></h4>
+<ul>
+<li>Introduced <strong><code>matchzy_debug_console</code></strong> (default: <code>1</code>) to control verbose server‑console logging and hooked it into the internal <code>Log(...)</code> helper.</li>
+<li>Expanded console‑side debug logs around the <strong>ready/auto‑ready flow</strong>, <strong>match start decisions</strong>, <strong>pause/tactical timeout handling</strong>, <strong><code>.gg</code> votes</strong> and <strong>FFW timers</strong>, to make user‑submitted logs much more useful for debugging.</li>
+<li>Documented both <code>matchzy_debug_console</code> and <code>matchzy_debug_chat</code> in <code>configuration.md</code> / <code>commands.md</code> under a dedicated <strong>Debugging &amp; logging</strong> section.</li>
+</ul>
+<h1 id="134">1.3.4<a class="headerlink" href="#134" title="Permanent link">¶</a></h1>
+<h4 id="january-20-2026_4">January 20, 2026<a class="headerlink" href="#january-20-2026_4" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added an example configuration for <strong>plugin‑managed pauses</strong> vs native tactical timeouts in <code>configuration.md</code> (showing how to use <code>matchzy_use_pause_command_for_tactical_pause 0</code> together with <code>matchzy_max_pauses_per_team</code>, and how it should align with <code>mp_team_timeout_max</code> when using <code>.tac</code>).</li>
+<li>Documented the new <strong><code>matchzy_gg_min_score_diff</code></strong> convar and clarified <code>.gg</code> behavior in both <code>commands.md</code> and <code>configuration.md</code>.</li>
+<li>Added a <strong>reload config</strong> command (<code>.reload_config</code> / <code>matchzy_reload_config</code>) that safely re‑executes <code>cfg/MatchZy/config.cfg</code> when no match is live.</li>
+<li>Restructured <code>commands.md</code> to include <strong>linkable per‑command sections</strong> (e.g. <code>#gg</code>, <code>#pause--p</code>, <code>#reload_config</code>) so individual commands can be shared with direct URLs.</li>
+</ul>
+<h1 id="133">1.3.3<a class="headerlink" href="#133" title="Permanent link">¶</a></h1>
+<h4 id="january-20-2026_5">January 20, 2026<a class="headerlink" href="#january-20-2026_5" title="Permanent link">¶</a></h4>
+<ul>
+<li>Hardened the <strong>release script</strong> with clean‑tree pre‑checks and safer version handling before tagging/publishing.</li>
+<li>Refactored internal score / readiness logic for clarity and maintainability in the enhanced match‑management features.</li>
+<li>Updated commands and configuration documentation, <code>README.md</code>, and <code>mkdocs.yml</code> to better reflect the 1.3.x feature set and to streamline the published docs.</li>
+</ul>
+<h1 id="130">1.3.0<a class="headerlink" href="#130" title="Permanent link">¶</a></h1>
+<h4 id="january-19-2026">January 19, 2026<a class="headerlink" href="#january-19-2026" title="Permanent link">¶</a></h4>
+<p><strong>🎉 Major Feature Release: Player Experience Enhancements</strong></p>
+<p>This release introduces a comprehensive suite of new features designed to improve player experience, tournament management, and match flow control. All new features are configurable and disabled by default for safety.</p>
+<h3 id="new-features_5">✨ New Features<a class="headerlink" href="#new-features_5" title="Permanent link">¶</a></h3>
+<h4 id="auto-ready-system_1">Auto-Ready System<a class="headerlink" href="#auto-ready-system_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Players are automatically marked as ready when they join the match (configurable)</li>
+<li>Players can still use <code>.unready</code> to opt-out if they're not ready</li>
+<li>Match starts automatically when all required players are ready</li>
+<li>Configurable via <code>matchzy_autoready_enabled</code> (default: <code>false</code>)</li>
+<li>Perfect for fast-paced tournaments where players are expected to be ready</li>
+</ul>
+<h4 id="enhanced-pause-system">Enhanced Pause System<a class="headerlink" href="#enhanced-pause-system" title="Permanent link">¶</a></h4>
+<ul>
+<li><strong>Both-team unpause requirement</strong>: Both teams must now type <code>.unpause</code> to resume (configurable via <code>matchzy_both_teams_unpause_required</code>)</li>
+<li><strong>Per-team pause limits</strong>: Limit number of pauses per team (e.g., 2 pauses per team) via <code>matchzy_max_pauses_per_team</code></li>
+<li><strong>Pause duration limits</strong>: Set maximum pause duration with automatic timeout via <code>matchzy_pause_duration</code></li>
+<li>New command aliases: <code>.p</code> for <code>.pause</code>, <code>.up</code> for <code>.unpause</code></li>
+<li>Pause tracking and remaining pauses shown in chat</li>
+</ul>
+<h4 id="side-selection-timer">Side Selection Timer<a class="headerlink" href="#side-selection-timer" title="Permanent link">¶</a></h4>
+<ul>
+<li>Configurable timer for side selection after knife round (default: 60 seconds)</li>
+<li>Commands: <code>.ct</code>, <code>.t</code>, <code>.stay</code>, <code>.swap</code> all work with timer</li>
+<li>Random side selection if timer expires without player choice</li>
+<li>Configurable via <code>matchzy_side_selection_enabled</code> and <code>matchzy_side_selection_time</code></li>
+<li>Prevents indefinite waiting after knife rounds</li>
+</ul>
+<h4 id="early-match-termination-gg-command">Early Match Termination (<code>.gg</code> Command)<a class="headerlink" href="#early-match-termination-gg-command" title="Permanent link">¶</a></h4>
+<ul>
+<li>New <code>.gg</code> command allows teams to forfeit the match</li>
+<li>Requires 80% team consensus (configurable)</li>
+<li>Vote tracking per round (votes reset each round)</li>
+<li>Opposing team automatically wins when threshold reached</li>
+<li>Configurable via <code>matchzy_gg_enabled</code> (default: <code>false</code>) and <code>matchzy_gg_threshold</code> (default: <code>0.8</code>)</li>
+<li>Perfect for scrims and practice matches</li>
+</ul>
+<h4 id="ffw-forfeitwalkover-system">FFW (Forfeit/Walkover) System<a class="headerlink" href="#ffw-forfeitwalkover-system" title="Permanent link">¶</a></h4>
+<ul>
+<li>Automatic forfeit system when entire team leaves the server</li>
+<li>4-minute timer starts when all players from a team disconnect</li>
+<li>Minute-by-minute warnings in chat</li>
+<li>Automatically cancels if any team member returns</li>
+<li>Opposing team wins by forfeit if timer expires</li>
+<li>Configurable via <code>matchzy_ffw_enabled</code> (default: <code>false</code>) and <code>matchzy_ffw_time</code> (default: <code>240</code>)</li>
+<li>Fair handling of connection issues in online tournaments</li>
+</ul>
+<h3 id="new-commands">🎮 New Commands<a class="headerlink" href="#new-commands" title="Permanent link">¶</a></h3>
+<ul>
+<li><code>.gg</code> - Vote to end match early (requires team consensus)</li>
+<li><code>.up</code> - Alias for <code>.unpause</code></li>
+<li><code>.p</code> - Alias for <code>.pause</code></li>
+</ul>
+<h3 id="new-configuration-variables">⚙️ New Configuration Variables<a class="headerlink" href="#new-configuration-variables" title="Permanent link">¶</a></h3>
+<div class="language-cfg highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="na">// Auto-Ready System</span>
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="na">matchzy_autoready_enabled "0"  // Default</span><span class="o">:</span><span class="w"> </span><span class="s">disabled</span>
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="na">// Enhanced Pause System</span>
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="na">matchzy_both_teams_unpause_required "1"  // Default</span><span class="o">:</span><span class="w"> </span><span class="s">enabled</span>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="na">matchzy_max_pauses_per_team "0"  // Default</span><span class="o">:</span><span class="w"> </span><span class="s">unlimited</span>
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="na">matchzy_pause_duration "0"  // Default</span><span class="o">:</span><span class="w"> </span><span class="s">no limit</span>
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="na">// Side Selection Timer</span>
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="na">matchzy_side_selection_enabled "1"  // Default</span><span class="o">:</span><span class="w"> </span><span class="s">enabled</span>
+</span><span id="__span-0-11"><a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="na">matchzy_side_selection_time "60"  // Default</span><span class="o">:</span><span class="w"> </span><span class="s">60 seconds</span>
+</span><span id="__span-0-12"><a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>
+</span><span id="__span-0-13"><a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="na">// Early Match Termination</span>
+</span><span id="__span-0-14"><a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="na">matchzy_gg_enabled "0"  // Default</span><span class="o">:</span><span class="w"> </span><span class="s">disabled</span>
+</span><span id="__span-0-15"><a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="na">matchzy_gg_threshold "0.8"  // Default</span><span class="o">:</span><span class="w"> </span><span class="s">80%</span>
+</span><span id="__span-0-16"><a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>
+</span><span id="__span-0-17"><a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="na">// FFW System</span>
+</span><span id="__span-0-18"><a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="na">matchzy_ffw_enabled "0"  // Default</span><span class="o">:</span><span class="w"> </span><span class="s">disabled</span>
+</span><span id="__span-0-19"><a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="na">matchzy_ffw_time "240"  // Default</span><span class="o">:</span><span class="w"> </span><span class="s">4 minutes</span>
+</span></code></pre></div>
+<h3 id="localization">🌍 Localization<a class="headerlink" href="#localization" title="Permanent link">¶</a></h3>
+<ul>
+<li>Added English localization for all new features</li>
+<li>New strings ready for community translations in other languages</li>
+</ul>
+<h3 id="technical-changes_3">🔧 Technical Changes<a class="headerlink" href="#technical-changes_3" title="Permanent link">¶</a></h3>
+<ul>
+<li>Enhanced event handlers for player connect/disconnect to support new features</li>
+<li>Improved timer management with proper cleanup on match reset</li>
+<li>Thread-safe operations for all new tracking systems</li>
+<li>Comprehensive cleanup of all new timers and tracking in <code>ResetMatch()</code></li>
+<li><strong>Smart match end delays based on demo configuration:</strong></li>
+<li>Demo recording disabled: ~10s restart (was 60-90s)</li>
+<li>Demo recording enabled, no upload URL: ~25-35s restart (was 60-90s)</li>
+<li>Demo recording enabled with upload URL: ~60-90s restart (unchanged, waits for upload)</li>
+</ul>
+<h3 id="documentation_1">📖 Documentation<a class="headerlink" href="#documentation_1" title="Permanent link">¶</a></h3>
+<ul>
+<li>Updated <code>README.md</code> with new features overview</li>
+<li>Updated <code>cfg/MatchZy/config.cfg</code> with comprehensive documentation</li>
+<li>Added detailed comments and use cases for all new convars</li>
+</ul>
+<hr>
+<h1 id="122">1.2.2<a class="headerlink" href="#122" title="Permanent link">¶</a></h1>
+<h4 id="january-6-2026">January 6, 2026<a class="headerlink" href="#january-6-2026" title="Permanent link">¶</a></h4>
+<ul>
+<li>Enhanced command documentation and player communication</li>
+<li>Improved practice utilities documentation</li>
+<li>Updated MatchZy convars reference</li>
+</ul>
+<h1 id="121">1.2.1<a class="headerlink" href="#121" title="Permanent link">¶</a></h1>
+<h4 id="december-30-2025">December 30, 2025<a class="headerlink" href="#december-30-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Enhanced player whitelist handling to allow admin bypass</li>
+<li>Admins can now connect even if not on whitelist</li>
+<li>Improved match configuration flexibility</li>
+</ul>
+<h1 id="120">1.2.0<a class="headerlink" href="#120" title="Permanent link">¶</a></h1>
+<h4 id="december-30-2025_1">December 30, 2025<a class="headerlink" href="#december-30-2025_1" title="Permanent link">¶</a></h4>
+<p><strong>🔄 Remote Backup &amp; Admin Management Release</strong></p>
+<p>This release introduces remote backup upload functionality and per-match admin configuration, enabling better integration with tournament platforms and match management systems.</p>
+<h3 id="new-features_6">✨ New Features<a class="headerlink" href="#new-features_6" title="Permanent link">¶</a></h3>
+<h4 id="remote-backup-upload">Remote Backup Upload<a class="headerlink" href="#remote-backup-upload" title="Permanent link">¶</a></h4>
+<ul>
+<li>Upload match backups to remote HTTP/HTTPS endpoints</li>
+<li>Configurable via <code>matchzy_remote_backup_url</code> convar</li>
+<li>Custom authentication headers support via <code>matchzy_remote_backup_header_key</code> and <code>matchzy_remote_backup_header_value</code></li>
+<li>Automatic upload after each backup round</li>
+<li>Perfect for centralized backup storage and disaster recovery</li>
+</ul>
+<h4 id="per-match-admin-configuration">Per-Match Admin Configuration<a class="headerlink" href="#per-match-admin-configuration" title="Permanent link">¶</a></h4>
+<ul>
+<li>Define admins directly in match JSON configuration</li>
+<li>Override server-level admin settings per match</li>
+<li>Support for <code>"admins": ["STEAM_ID_1", "STEAM_ID_2"]</code> in match config</li>
+<li>Simplified tournament admin management</li>
+<li>No need to modify server files for each match</li>
+</ul>
+<h3 id="technical-changes_4">🔧 Technical Changes<a class="headerlink" href="#technical-changes_4" title="Permanent link">¶</a></h3>
+<ul>
+<li>Enhanced backup management with HTTP client integration</li>
+<li>Improved admin validation logic</li>
+<li>Better error handling for remote operations</li>
+</ul>
+<h3 id="documentation_2">📖 Documentation<a class="headerlink" href="#documentation_2" title="Permanent link">¶</a></h3>
+<ul>
+<li>Updated configuration guide with remote backup examples</li>
+<li>Added admin configuration documentation</li>
+</ul>
+<h1 id="115">1.1.5<a class="headerlink" href="#115" title="Permanent link">¶</a></h1>
+<h4 id="december-29-2025">December 29, 2025<a class="headerlink" href="#december-29-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Enhanced overtime configuration handling</li>
+<li>Improved match management for extended play</li>
+<li>Better overtime round tracking</li>
+</ul>
+<h1 id="114">1.1.4<a class="headerlink" href="#114" title="Permanent link">¶</a></h1>
+<h4 id="december-29-2025_1">December 29, 2025<a class="headerlink" href="#december-29-2025_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Refined overtime handling in match management</li>
+<li>Improved overtime segment tracking</li>
+<li>Better OT phase detection</li>
+</ul>
+<h1 id="113">1.1.3<a class="headerlink" href="#113" title="Permanent link">¶</a></h1>
+<h4 id="december-29-2025_2">December 29, 2025<a class="headerlink" href="#december-29-2025_2" title="Permanent link">¶</a></h4>
+<ul>
+<li>Refined overtime segments handling</li>
+<li>Enhanced documentation for overtime configuration</li>
+<li>Improved overtime logic</li>
+</ul>
+<h1 id="112">1.1.2<a class="headerlink" href="#112" title="Permanent link">¶</a></h1>
+<h4 id="december-29-2025_3">December 29, 2025<a class="headerlink" href="#december-29-2025_3" title="Permanent link">¶</a></h4>
+<ul>
+<li>Enhanced overtime tie resolution logic</li>
+<li>Improved overtime documentation</li>
+<li>Better handling of OT scenarios</li>
+</ul>
+<h1 id="111">1.1.1<a class="headerlink" href="#111" title="Permanent link">¶</a></h1>
+<h4 id="december-29-2025_4">December 29, 2025<a class="headerlink" href="#december-29-2025_4" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added tournament overtime and regulation configuration</li>
+<li>Support for <code>maxRounds</code>, <code>overtimeMode</code>, and <code>overtimeSegments</code> in JSON config</li>
+<li>Enhanced flexibility for tournament organizers</li>
+</ul>
+<h1 id="110">1.1.0<a class="headerlink" href="#110" title="Permanent link">¶</a></h1>
+<h4 id="december-29-2025_5">December 29, 2025<a class="headerlink" href="#december-29-2025_5" title="Permanent link">¶</a></h4>
+<p><strong>🎯 Match Queuing &amp; Tournament Automation Release</strong></p>
+<p>This release introduces intelligent match queuing capabilities, allowing servers to automatically transition between matches without manual intervention. Perfect for tournament brackets and continuous match series.</p>
+<h3 id="new-features_7">✨ New Features<a class="headerlink" href="#new-features_7" title="Permanent link">¶</a></h3>
+<h4 id="match-queuing-system">Match Queuing System<a class="headerlink" href="#match-queuing-system" title="Permanent link">¶</a></h4>
+<ul>
+<li>New <code>tournamentNextMatch</code> field in match JSON configuration</li>
+<li>Automatic detection and loading of queued matches after series end</li>
+<li>Seamless transition between matches without downtime</li>
+<li>Support for tournament bracket automation</li>
+<li>Queue state tracking and validation</li>
+</ul>
+<h4 id="overtime-configuration-enhancements">Overtime Configuration Enhancements<a class="headerlink" href="#overtime-configuration-enhancements" title="Permanent link">¶</a></h4>
+<ul>
+<li>Support for <code>maxRounds</code> in match configuration</li>
+<li>Configurable <code>overtimeMode</code> (standard, tournament)</li>
+<li><code>overtimeSegments</code> configuration for multi-OT scenarios</li>
+<li>Better tie resolution logic</li>
+<li>Enhanced overtime round tracking</li>
+</ul>
+<h3 id="technical-changes_5">🔧 Technical Changes<a class="headerlink" href="#technical-changes_5" title="Permanent link">¶</a></h3>
+<ul>
+<li>Improved match reset flow to check for queued matches</li>
+<li>Enhanced overtime handling in match management</li>
+<li>Better state management for continuous matches</li>
+<li>Refined OT segment tracking and phase detection</li>
+</ul>
+<h3 id="documentation_3">📖 Documentation<a class="headerlink" href="#documentation_3" title="Permanent link">¶</a></h3>
+<ul>
+<li>Added match queuing examples</li>
+<li>Updated overtime configuration guide</li>
+<li>Enhanced tournament workflow documentation</li>
+</ul>
+<h1 id="1026">1.0.26<a class="headerlink" href="#1026" title="Permanent link">¶</a></h1>
+<h4 id="december-29-2025_6">December 29, 2025<a class="headerlink" href="#december-29-2025_6" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added missing using directive for Utils module</li>
+<li>Fixed compilation issues in G5API.cs</li>
+</ul>
+<h1 id="1025">1.0.25<a class="headerlink" href="#1025" title="Permanent link">¶</a></h1>
+<h4 id="december-21-2025">December 21, 2025<a class="headerlink" href="#december-21-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Implemented connected clients tracking for simulation and normal matches</li>
+<li>Enhanced player state management</li>
+<li>Improved match flow control</li>
+</ul>
+<h1 id="1024">1.0.24<a class="headerlink" href="#1024" title="Permanent link">¶</a></h1>
+<h4 id="december-20-2025">December 20, 2025<a class="headerlink" href="#december-20-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Enhanced simulation and normal match settings enforcement</li>
+<li>Improved timescale and cheats management</li>
+<li>Better simulation mode reliability</li>
+</ul>
+<h1 id="1023">1.0.23<a class="headerlink" href="#1023" title="Permanent link">¶</a></h1>
+<h4 id="december-20-2025_1">December 20, 2025<a class="headerlink" href="#december-20-2025_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Implemented HLTV/SourceTV exclusion from readiness tracking</li>
+<li>Fixed issues with spectator bots affecting ready system</li>
+<li>Improved match start logic</li>
+</ul>
+<h1 id="1022">1.0.22<a class="headerlink" href="#1022" title="Permanent link">¶</a></h1>
+<h4 id="december-20-2025_2">December 20, 2025<a class="headerlink" href="#december-20-2025_2" title="Permanent link">¶</a></h4>
+<ul>
+<li>Updated simulation initialization logic for first map in series</li>
+<li>Fixed simulation flow for BO3/BO5 matches</li>
+<li>Enhanced multi-map simulation support</li>
+</ul>
+<h1 id="1021">1.0.21<a class="headerlink" href="#1021" title="Permanent link">¶</a></h1>
+<h4 id="december-20-2025_3">December 20, 2025<a class="headerlink" href="#december-20-2025_3" title="Permanent link">¶</a></h4>
+<ul>
+<li>Enhanced simulation mode readiness logic and event handling</li>
+<li>Improved bot ready flow</li>
+<li>Better simulation match lifecycle</li>
+</ul>
+<h1 id="1020">1.0.20<a class="headerlink" href="#1020" title="Permanent link">¶</a></h1>
+<h4 id="december-19-2025">December 19, 2025<a class="headerlink" href="#december-19-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Enhanced logging for series and map checkpoints</li>
+<li>Improved debugging capabilities</li>
+<li>Better match state tracking</li>
+</ul>
+<h1 id="1019">1.0.19<a class="headerlink" href="#1019" title="Permanent link">¶</a></h1>
+<h4 id="december-19-2025_1">December 19, 2025<a class="headerlink" href="#december-19-2025_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added simulation timescale configuration</li>
+<li>Support for <code>simulation_timescale</code> in match JSON</li>
+<li>Enhanced match control for testing</li>
+</ul>
+<h1 id="1018">1.0.18<a class="headerlink" href="#1018" title="Permanent link">¶</a></h1>
+<h4 id="december-19-2025_2">December 19, 2025<a class="headerlink" href="#december-19-2025_2" title="Permanent link">¶</a></h4>
+<ul>
+<li>Enhanced simulation mode behavior and logging</li>
+<li>Refactored MatchZy configuration</li>
+<li>Improved simulation state management</li>
+</ul>
+<h1 id="1017">1.0.17<a class="headerlink" href="#1017" title="Permanent link">¶</a></h1>
+<h4 id="december-19-2025_3">December 19, 2025<a class="headerlink" href="#december-19-2025_3" title="Permanent link">¶</a></h4>
+<p><strong>🔄 MatchZy-Safe Auto-Updater Release</strong></p>
+<p>Introduces intelligent auto-update detection that prevents server restarts during active matches, critical for unattended tournament servers.</p>
+<h3 id="new-features_8">✨ New Features<a class="headerlink" href="#new-features_8" title="Permanent link">¶</a></h3>
+<h4 id="matchzy-safe-auto-updater">MatchZy-Safe Auto-Updater<a class="headerlink" href="#matchzy-safe-auto-updater" title="Permanent link">¶</a></h4>
+<ul>
+<li>Monitors Steam UpToDateCheck API for CS2 server updates</li>
+<li>Only updates when <code>matchzy_tournament_status</code> is "idle"</li>
+<li>Writes update markers to disk for external monitoring</li>
+<li>Prevents disruptive mid-match restarts</li>
+<li>Configurable check interval</li>
+</ul>
+<h3 id="documentation_4">📖 Documentation<a class="headerlink" href="#documentation_4" title="Permanent link">¶</a></h3>
+<ul>
+<li>Added auto-updater configuration guide</li>
+<li>Updated tournament server deployment docs</li>
+</ul>
+<h1 id="1016">1.0.16<a class="headerlink" href="#1016" title="Permanent link">¶</a></h1>
+<h4 id="december-19-2025_4">December 19, 2025<a class="headerlink" href="#december-19-2025_4" title="Permanent link">¶</a></h4>
+<ul>
+<li>Enhanced bot behavior in simulation mode</li>
+<li>Improved bot command execution</li>
+<li>Better simulation reliability</li>
+</ul>
+<h1 id="1015">1.0.15<a class="headerlink" href="#1015" title="Permanent link">¶</a></h1>
+<h4 id="december-19-2025_5">December 19, 2025<a class="headerlink" href="#december-19-2025_5" title="Permanent link">¶</a></h4>
+<ul>
+<li>Refactored simulation flow management</li>
+<li>Improved readiness handling for bots</li>
+<li>Enhanced simulation initialization</li>
+</ul>
+<h1 id="1014">1.0.14<a class="headerlink" href="#1014" title="Permanent link">¶</a></h1>
+<h4 id="december-18-2025">December 18, 2025<a class="headerlink" href="#december-18-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Enhanced bot management and simulation flow</li>
+<li>Improved logging and debugging</li>
+<li>Refactored Load method and event handling</li>
+</ul>
+<h1 id="1013">1.0.13<a class="headerlink" href="#1013" title="Permanent link">¶</a></h1>
+<h4 id="december-18-2025_1">December 18, 2025<a class="headerlink" href="#december-18-2025_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Enhanced simulation ready flow management</li>
+<li>Improved player connection handling</li>
+<li>Better bot management in simulation mode</li>
+</ul>
+<h1 id="1012">1.0.12<a class="headerlink" href="#1012" title="Permanent link">¶</a></h1>
+<h4 id="december-18-2025_2">December 18, 2025<a class="headerlink" href="#december-18-2025_2" title="Permanent link">¶</a></h4>
+<ul>
+<li>Ensured bots remain active in simulation mode</li>
+<li>Fixed <code>bot_join_after_player</code> command enforcement</li>
+<li>Supports fully simulated matches without humans</li>
+</ul>
+<h1 id="1011">1.0.11<a class="headerlink" href="#1011" title="Permanent link">¶</a></h1>
+<h4 id="december-18-2025_3">December 18, 2025<a class="headerlink" href="#december-18-2025_3" title="Permanent link">¶</a></h4>
+<ul>
+<li>Refactored bot management and simulation handling</li>
+<li>Improved code organization</li>
+<li>Enhanced simulation reliability</li>
+</ul>
+<h1 id="1010">1.0.10<a class="headerlink" href="#1010" title="Permanent link">¶</a></h1>
+<h4 id="december-18-2025_4">December 18, 2025<a class="headerlink" href="#december-18-2025_4" title="Permanent link">¶</a></h4>
+<ul>
+<li>Refactored bot management logic in Utility.cs</li>
+<li>Cleaned up bot spawn/kick functionality</li>
+<li>Improved code maintainability</li>
+</ul>
+<h1 id="109">1.0.9<a class="headerlink" href="#109" title="Permanent link">¶</a></h1>
+<h4 id="december-18-2025_5">December 18, 2025<a class="headerlink" href="#december-18-2025_5" title="Permanent link">¶</a></h4>
+<ul>
+<li>Updated configuration files</li>
+<li>Cleaned up bot management code</li>
+<li>Enhanced simulation configuration</li>
+</ul>
+<h1 id="108">1.0.8<a class="headerlink" href="#108" title="Permanent link">¶</a></h1>
+<h4 id="december-18-2025_6">December 18, 2025<a class="headerlink" href="#december-18-2025_6" title="Permanent link">¶</a></h4>
+<ul>
+<li>Refactored simulation handling in MatchZy</li>
+<li>Improved code structure</li>
+<li>Better separation of concerns</li>
+</ul>
+<h1 id="107">1.0.7<a class="headerlink" href="#107" title="Permanent link">¶</a></h1>
+<h4 id="december-18-2025_7">December 18, 2025<a class="headerlink" href="#december-18-2025_7" title="Permanent link">¶</a></h4>
+<ul>
+<li>Refactored warmup configuration handling</li>
+<li>Improved simulation warmup logic</li>
+<li>Better configuration management</li>
+</ul>
+<h1 id="106">1.0.6<a class="headerlink" href="#106" title="Permanent link">¶</a></h1>
+<h4 id="december-18-2025_8">December 18, 2025<a class="headerlink" href="#december-18-2025_8" title="Permanent link">¶</a></h4>
+<ul>
+<li>Implemented warmup configuration adjustments for simulation mode</li>
+<li>Enhanced simulation warmup flow</li>
+<li>Improved player spawn handling</li>
+</ul>
+<h1 id="105">1.0.5<a class="headerlink" href="#105" title="Permanent link">¶</a></h1>
+<h4 id="december-18-2025_9">December 18, 2025<a class="headerlink" href="#december-18-2025_9" title="Permanent link">¶</a></h4>
+<ul>
+<li>Implemented simulation flow handling during map changes</li>
+<li>Fixed simulation initialization on map transitions</li>
+<li>Enhanced multi-map simulation support</li>
+</ul>
+<h1 id="104">1.0.4<a class="headerlink" href="#104" title="Permanent link">¶</a></h1>
+<h4 id="december-18-2025_10">December 18, 2025<a class="headerlink" href="#december-18-2025_10" title="Permanent link">¶</a></h4>
+<ul>
+<li>Enhanced remote logging configuration and event handling</li>
+<li>Improved webhook integration</li>
+<li>Better event delivery reliability</li>
+</ul>
+<h1 id="103">1.0.3<a class="headerlink" href="#103" title="Permanent link">¶</a></h1>
+<h4 id="december-10-2025">December 10, 2025<a class="headerlink" href="#december-10-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Updated changelog generation in release script</li>
+<li>Improved release automation</li>
+<li>Better GitHub release notes</li>
+</ul>
+<h1 id="102">1.0.2<a class="headerlink" href="#102" title="Permanent link">¶</a></h1>
+<h4 id="december-10-2025_1">December 10, 2025<a class="headerlink" href="#december-10-2025_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Bug fixes and stability improvements</li>
+<li>Enhanced simulation mode handling</li>
+</ul>
+<h1 id="101">1.0.1<a class="headerlink" href="#101" title="Permanent link">¶</a></h1>
+<h4 id="december-10-2025_2">December 10, 2025<a class="headerlink" href="#december-10-2025_2" title="Permanent link">¶</a></h4>
+<ul>
+<li>Enhanced simulation mode handling</li>
+<li>Added simulation bot disconnection after series end</li>
+<li>Improved cleanup logic</li>
+</ul>
+<h1 id="100">1.0.0<a class="headerlink" href="#100" title="Permanent link">¶</a></h1>
+<h4 id="december-9-2025">December 9, 2025<a class="headerlink" href="#december-9-2025" title="Permanent link">¶</a></h4>
+<p><strong>🎉 Initial Release: MatchZy Enhanced Fork</strong></p>
+<p>This marks the first official release of the <strong>MatchZy Enhanced</strong> fork, a specialized version optimized for tournament automation, simulation testing, and seamless integration with the MatchZy Auto Tournament platform. Built on the foundation of the excellent original MatchZy by WD-, this fork adds powerful automation capabilities while maintaining full compatibility with the core plugin.</p>
+<h3 id="new-features_9">✨ New Features<a class="headerlink" href="#new-features_9" title="Permanent link">¶</a></h3>
+<h4 id="simulation-mode">Simulation Mode<a class="headerlink" href="#simulation-mode" title="Permanent link">¶</a></h4>
+<p>Complete bot-driven match simulation for testing and automation:
+- Configure via <code>"simulation": true</code> in match JSON
+- Adjustable timescale via <code>simulation_timescale</code> for faster testing (1.0 to 10.0x speed)
+- Automatic bot spawn and management (10 bots per team)
+- Bots remain active even without human players
+- Full match lifecycle simulation (warmup, knife, live, overtime, series)
+- Complete event logging for automated match processing
+- Perfect for tournament bracket pre-computation and stress testing</p>
+<h4 id="enhanced-event-system">Enhanced Event System<a class="headerlink" href="#enhanced-event-system" title="Permanent link">¶</a></h4>
+<p>Comprehensive webhook-based event logging for external integrations:
+- <strong>Player Events</strong>: Connect, disconnect, ready, unready
+- <strong>Match State Events</strong>: Match loaded, started, paused, resumed, ended
+- <strong>Round Events</strong>: Round start, end, MVP, bomb plant/defuse
+- <strong>Backup Events</strong>: Backup created, loaded
+- All events sent to <code>remote_log_url</code> as JSON payloads
+- Custom authentication header support
+- Enables real-time tournament platform integration</p>
+<h4 id="tournament-status-convars">Tournament Status ConVars<a class="headerlink" href="#tournament-status-convars" title="Permanent link">¶</a></h4>
+<p>Real-time match state tracking accessible to external tools:
+- <code>matchzy_tournament_status</code>: Current match phase (idle/loading/warmup/knife/live/paused/halftime/postgame/error)
+- <code>matchzy_tournament_match</code>: Active match identifier (e.g., "match_12345")
+- <code>matchzy_tournament_updated</code>: Unix timestamp of last status update
+- Perfect for tournament dashboards and server orchestration</p>
+<h4 id="match-report-api">Match Report API<a class="headerlink" href="#match-report-api" title="Permanent link">¶</a></h4>
+<p>Automated JSON reports for completed matches:
+- Automatic upload to configured endpoint after series end
+- Comprehensive match statistics and outcomes
+- Server identification for multi-server tournaments
+- Authentication header support for secure APIs
+- Structured data for database ingestion</p>
+<h4 id="matchzy-safe-auto-updater_1">MatchZy-Safe Auto-Updater<a class="headerlink" href="#matchzy-safe-auto-updater_1" title="Permanent link">¶</a></h4>
+<p>Intelligent update system that never interrupts active matches:
+- Monitors Steam UpToDateCheck API for CS2 updates
+- Only updates when <code>matchzy_tournament_status</code> is "idle"
+- Logs update availability to disk for external monitoring
+- Prevents mid-match server restarts
+- Critical for unattended tournament servers</p>
+<h3 id="technical-changes_6">🔧 Technical Changes<a class="headerlink" href="#technical-changes_6" title="Permanent link">¶</a></h3>
+<ul>
+<li>Added <code>SimulationMode.cs</code> with complete bot management system</li>
+<li>Enhanced <code>SynchronizationContextManagement.cs</code> for thread safety</li>
+<li>Implemented <code>PublishEvents.cs</code> for webhook event delivery</li>
+<li>Added <code>MatchReportCommand.cs</code> for automated reporting</li>
+<li>Created <code>MatchZySafeAutoUpdater.cs</code> with update detection</li>
+<li>Improved state management across all match phases</li>
+<li>Better error handling and logging throughout</li>
+</ul>
+<h3 id="documentation_5">📖 Documentation<a class="headerlink" href="#documentation_5" title="Permanent link">¶</a></h3>
+<p>Complete documentation rewrite for tournament automation use cases:
+- <strong>API Endpoint Specification</strong>: Full webhook event reference
+- <strong>Configuration Loading Behavior</strong>: Priority and override rules
+- <strong>Simulation Mode Guide</strong>: Complete simulation workflow documentation
+- <strong>Integration Documentation</strong>: External platform integration examples
+- <strong>Server Allocation Status</strong>: Multi-server management guide</p>
+<h3 id="migration-notes">🔄 Migration Notes<a class="headerlink" href="#migration-notes" title="Permanent link">¶</a></h3>
+<h4 id="compatibility">Compatibility<a class="headerlink" href="#compatibility" title="Permanent link">¶</a></h4>
+<ul>
+<li>✅ Fully compatible with existing MatchZy configurations</li>
+<li>✅ All original features and commands preserved</li>
+<li>✅ Existing match JSON configurations work unchanged</li>
+<li>✅ Drop-in replacement for standard MatchZy</li>
+</ul>
+<h4 id="new-requirements">New Requirements<a class="headerlink" href="#new-requirements" title="Permanent link">¶</a></h4>
+<ul>
+<li>Simulation mode requires <code>"simulation": true</code> in match config</li>
+<li>Event delivery requires <code>remote_log_url</code> configuration</li>
+<li>Tournament status convars are always active (no opt-out)</li>
+</ul>
+<h4 id="breaking-changes">Breaking Changes<a class="headerlink" href="#breaking-changes" title="Permanent link">¶</a></h4>
+<p>None for standard usage. Simulation features are opt-in via match configuration.</p>
+<h3 id="credits">🙏 Credits<a class="headerlink" href="#credits" title="Permanent link">¶</a></h3>
+<p>This fork is maintained by <strong><a href="https://github.com/sivert-io">sivert-io</a></strong> for the <strong><a href="https://github.com/sivert-io/matchzy-auto-tournament">MatchZy Auto Tournament</a></strong> platform.</p>
+<p>Built on the excellent foundation of <strong><a href="https://github.com/shobhit-pathak/MatchZy">Original MatchZy</a></strong> by <strong>WD-</strong> (shobhit-pathak).</p>
+<h3 id="target-use-cases">🎯 Target Use Cases<a class="headerlink" href="#target-use-cases" title="Permanent link">¶</a></h3>
+<ul>
+<li><strong>Tournament Platforms</strong>: Automated match orchestration across multiple servers</li>
+<li><strong>Bracket Pre-computation</strong>: Simulate tournament outcomes at high speed</li>
+<li><strong>Integration Testing</strong>: Fast validation of tournament platform integrations</li>
+<li><strong>Server Management</strong>: Coordinated updates across tournament server fleets</li>
+<li><strong>Analytics</strong>: Rich event streams for match statistics and player tracking</li>
+</ul>
+<hr>
+<h2 id="original-matchzy-versions-08x-and-earlier">Original MatchZy Versions (0.8.x and earlier)<a class="headerlink" href="#original-matchzy-versions-08x-and-earlier" title="Permanent link">¶</a></h2>
+<p>The following versions are from the original MatchZy plugin by WD- before the Enhanced fork.</p>
+<hr>
+<h1 id="0827">0.8.27<a class="headerlink" href="#0827" title="Permanent link">¶</a></h1>
+<h4 id="november-27-2025">November 27, 2025<a class="headerlink" href="#november-27-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Demo recording improvements</li>
+<li>Auto-kick players after series end</li>
+<li>Enhanced server cleanup</li>
+</ul>
+<h1 id="0826">0.8.26<a class="headerlink" href="#0826" title="Permanent link">¶</a></h1>
+<h4 id="november-27-2025_1">November 27, 2025<a class="headerlink" href="#november-27-2025_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Enhanced demo upload with debug logging</li>
+<li>Added chat notifications for demo upload</li>
+<li>Improved demo upload reliability</li>
+</ul>
+<h1 id="0825">0.8.25<a class="headerlink" href="#0825" title="Permanent link">¶</a></h1>
+<h4 id="november-20-2025">November 20, 2025<a class="headerlink" href="#november-20-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Refactored match report command for improved async handling</li>
+<li>Better error handling in match reports</li>
+</ul>
+<h1 id="0824">0.8.24<a class="headerlink" href="#0824" title="Permanent link">¶</a></h1>
+<h4 id="november-15-2025">November 15, 2025<a class="headerlink" href="#november-15-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Bug fixes and stability improvements</li>
+</ul>
+<h1 id="0823">0.8.23<a class="headerlink" href="#0823" title="Permanent link">¶</a></h1>
+<h4 id="november-15-2025_1">November 15, 2025<a class="headerlink" href="#november-15-2025_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Bug fixes and stability improvements</li>
+</ul>
+<h1 id="0822">0.8.22<a class="headerlink" href="#0822" title="Permanent link">¶</a></h1>
+<h4 id="november-15-2025_2">November 15, 2025<a class="headerlink" href="#november-15-2025_2" title="Permanent link">¶</a></h4>
+<ul>
+<li>Enhanced match report upload functionality</li>
+</ul>
+<h1 id="0820">0.8.20<a class="headerlink" href="#0820" title="Permanent link">¶</a></h1>
+<h4 id="november-15-2025_3">November 15, 2025<a class="headerlink" href="#november-15-2025_3" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added match report upload functionality</li>
+</ul>
+<h1 id="0819">0.8.19<a class="headerlink" href="#0819" title="Permanent link">¶</a></h1>
+<h4 id="november-15-2025_4">November 15, 2025<a class="headerlink" href="#november-15-2025_4" title="Permanent link">¶</a></h4>
+<ul>
+<li>Implemented match report command</li>
+<li>Enhanced player connection tracking</li>
+</ul>
+<h1 id="0818">0.8.18<a class="headerlink" href="#0818" title="Permanent link">¶</a></h1>
+<h4 id="november-14-2025">November 14, 2025<a class="headerlink" href="#november-14-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added version display commands</li>
+<li>Updated dependencies</li>
+</ul>
+<h1 id="0817">0.8.17<a class="headerlink" href="#0817" title="Permanent link">¶</a></h1>
+<h4 id="november-9-2025">November 9, 2025<a class="headerlink" href="#november-9-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added tournament status ConVars</li>
+<li>Automated release system</li>
+<li>Enhanced release process</li>
+</ul>
+<h1 id="0816">0.8.16<a class="headerlink" href="#0816" title="Permanent link">¶</a></h1>
+<h4 id="october-26-2025">October 26, 2025<a class="headerlink" href="#october-26-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added event logging improvements</li>
+<li>Enhanced backup management logging</li>
+</ul>
+<hr>
+<h1 id="0815">0.8.15<a class="headerlink" href="#0815" title="Permanent link">¶</a></h1>
+<h4 id="october-26-2025_1">October 26, 2025<a class="headerlink" href="#october-26-2025_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Fixed the /noclip command without any permissions.</li>
+<li>Updated pt-BR translation.</li>
+<li>Fixed database schema creation error with MySQL.</li>
+</ul>
+<h1 id="0814">0.8.14<a class="headerlink" href="#0814" title="Permanent link">¶</a></h1>
+<h4 id="october-21-2025">October 21, 2025<a class="headerlink" href="#october-21-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Bumped CSS Version.</li>
+<li>Added .savepos and .loadpos commands in practice mode.</li>
+<li>Fixed noclip not getting disabled after switching out from practice mode.</li>
+<li>Fixed issues with rethrow of smoke / molly / nade.</li>
+<li>Fixed .rethrow always throwing incendiary instead of molotov. </li>
+<li>Fixed <code>RemoteLogHeaderValue</code> value while resetting the match.</li>
+</ul>
+<h1 id="0813">0.8.13<a class="headerlink" href="#0813" title="Permanent link">¶</a></h1>
+<h4 id="september-03-2025">September 03, 2025<a class="headerlink" href="#september-03-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Fixed coach bomb bug and updated CSS version.</li>
+<li>Added <code>matchzy_demo_recording_enabled</code> convar to toggle demo recording.</li>
+<li>Fixed the Map Winner Logic in MapWinner event</li>
+<li>Fixed first Map Name in database stats</li>
+</ul>
+<h1 id="0812">0.8.12<a class="headerlink" href="#0812" title="Permanent link">¶</a></h1>
+<h4 id="august-25-2025">August 25, 2025<a class="headerlink" href="#august-25-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Updated CSS Version to fix <code>.last</code> and <code>.throw</code> commands.</li>
+</ul>
+<h1 id="0811">0.8.11<a class="headerlink" href="#0811" title="Permanent link">¶</a></h1>
+<h4 id="august-9-2025">August 9, 2025<a class="headerlink" href="#august-9-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Updated CSS Version</li>
+<li>Fixed SmokeGrenadeProjectile Signatures</li>
+</ul>
+<h1 id="0810">0.8.10<a class="headerlink" href="#0810" title="Permanent link">¶</a></h1>
+<h4 id="may-12-2025">May 12, 2025<a class="headerlink" href="#may-12-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Fixed decoy airtime in Practice Mode. (Switched <code>EventDecoyDetonate</code> to <code>EventDecoyStarted</code> so it takes the air time once it lands, and not when the decoy finishes)</li>
+<li>Added <code>.ct</code> and <code>.t</code> command for side selection after knife round.</li>
+<li>Rename <code>ive_wingman_override.cfg</code> to <code>live_wingman_override.cfg</code></li>
+<li>Fixed es-ES.json</li>
+</ul>
+<h1 id="089">0.8.9<a class="headerlink" href="#089" title="Permanent link">¶</a></h1>
+<h4 id="april-3-2025">April 3, 2025<a class="headerlink" href="#april-3-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Fixed issue with EventPlayerChat (. commands) post CSSharp v315 update.</li>
+</ul>
+<h1 id="088">0.8.8<a class="headerlink" href="#088" title="Permanent link">¶</a></h1>
+<h4 id="january-1-2025">January 1, 2025<a class="headerlink" href="#january-1-2025" title="Permanent link">¶</a></h4>
+<ul>
+<li>Fixed issue with !pause command where non-admin players were not able to take pauses when <code>matchzy_tech_pause_flag ""</code> was set.</li>
+</ul>
+<h1 id="087">0.8.7<a class="headerlink" href="#087" title="Permanent link">¶</a></h1>
+<h4 id="december-4-2024">December 4, 2024<a class="headerlink" href="#december-4-2024" title="Permanent link">¶</a></h4>
+<ul>
+<li>Fixed backup / restore on Windows.</li>
+<li>Dryrun will now have random competitive spawns rather than same spawns every time.</li>
+<li>Made <code>.pause</code> / <code>.tech</code> toggleable. Use <code>matchzy_enable_tech_pause</code> convar to toggle.</li>
+<li>Updated pt-PT translation.</li>
+<li>Fixed live_override</li>
+</ul>
+<h1 id="086">0.8.6<a class="headerlink" href="#086" title="Permanent link">¶</a></h1>
+<h4 id="september-13-2024">September 13, 2024<a class="headerlink" href="#september-13-2024" title="Permanent link">¶</a></h4>
+<ul>
+<li>Improvements in coach, now coaches will spawn on the fixed defined spawn to avoid spawning and getting stuck with the players. Spawns will be defined in <code>addons/counterstrikesharp/plugins/MatchZy/spawns/coach/&lt;map_name&gt;.json</code>. Each map will have its json file, in which there will be 2 keys, "3" and "2". 3 -&gt; CT, 2 -&gt; T and the values will be an array of Vector and QAngle objects.</li>
+<li>Added <code>.showspawns</code> and <code>.hidespawns</code> command for Practice mode to toggle highlighting of competitive spawns. (Image attached)</li>
+<li>Removed auto-join of players in match setup which was causing players to spawn under the ground.</li>
+<li>Added <code>.rr</code> alias for <code>.restart</code> command.</li>
+</ul>
+<h1 id="085">0.8.5<a class="headerlink" href="#085" title="Permanent link">¶</a></h1>
+<h4 id="august-27-2024">August 27, 2024<a class="headerlink" href="#august-27-2024" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added <code>matchzy_match_start_message</code> convar to configure message to show when the match starts. Use $$$ to break message into multiple lines.</li>
+<li>Some improvements and guard checks in coach system</li>
+<li>Fixed <code>matchzy_hostname_format</code> not getting disabled on setting its value to ""</li>
+<li>Fixed winner side in <code>round_end</code> event</li>
+</ul>
+<h1 id="084">0.8.4<a class="headerlink" href="#084" title="Permanent link">¶</a></h1>
+<h4 id="august-27-2024_1">August 27, 2024<a class="headerlink" href="#august-27-2024_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Fixes in coach system, where players would spawn into each other.</li>
+<li>Improved backup loading (teams will be locked automatically with the first restore if match setup was being used.)</li>
+<li>Fixed veto bug where ready system would not work after the veto.</li>
+<li>Updated Uzbek translations </li>
+</ul>
+<h1 id="083">0.8.3<a class="headerlink" href="#083" title="Permanent link">¶</a></h1>
+<h4 id="august-25-2024">August 25, 2024<a class="headerlink" href="#august-25-2024" title="Permanent link">¶</a></h4>
+<ul>
+<li>Fixed issues with backup restore where <code>.restore</code> command would show as round restored, but nothing happened. (Improved file naming and backup saving logic)</li>
+<li>Updated live.cfg as per new rules (mp_team_timeout_max 3; mp_team_timeout_ot_max 1; mp_team_timeout_ot_add_each 1)</li>
+<li>Added css_globalnades alias (!globalnades) for css_save_nades_as_global / .globalnades</li>
+</ul>
+<h1 id="082">0.8.2<a class="headerlink" href="#082" title="Permanent link">¶</a></h1>
+<h4 id="august-25-2024_1">August 25, 2024<a class="headerlink" href="#august-25-2024_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added capability to have multiple coaches in a team.</li>
+<li>Coaches will now be invisible, they will drop the bomb on the spawn if they get it and will die 1 second before freezetime ends.</li>
+<li>If a match is loaded, player will directly join their respective team, skipping the join team menu.</li>
+<li>Fixed a bug where loading a saved nade would make the player stuck.</li>
+<li>Added <code>matchzy_stop_command_no_damage</code> convar to determine whether the stop command becomes unavailable if a player damages a player from the opposing team.</li>
+<li><code>.map</code> command can now be used without "de_" prefix for maps. (Example: .map dust2)</li>
+</ul>
+<h1 id="081">0.8.1<a class="headerlink" href="#081" title="Permanent link">¶</a></h1>
+<h4 id="august-17-2024">August 17, 2024<a class="headerlink" href="#august-17-2024" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added matchzy_enable_damage_report convar to toggle damage report after every round.</li>
+<li>Fixed bad demo name formatting.</li>
+<li>Updated Uzbek translations.</li>
+</ul>
+<h1 id="080">0.8.0<a class="headerlink" href="#080" title="Permanent link">¶</a></h1>
+<h4 id="august-17-2024_1">August 17, 2024<a class="headerlink" href="#august-17-2024_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Improved backup and restore system. (Added matchzy_loadbackup and matchzy_loadbackup_url commands, now round backups will be stored in .json file in csgo/MatchZyDataBackup/ directory which will have valve backup and other match config data.)</li>
+<li>Added matchzy_listbackups which lists all the backups for the provided matchid. By default lists backups of the current match.</li>
+<li>Added matchzy_hostname_format for hostname formatting.</li>
+<li>Improved player color smokes in practice mode</li>
+<li>Fixed .last grenade's player rotation</li>
+<li>Added switching of maps without adding de_ prefix (using .map command)</li>
+<li>Marked the requestBody as required: true in event_schema.yml</li>
+</ul>
+<h1 id="0713">0.7.13<a class="headerlink" href="#0713" title="Permanent link">¶</a></h1>
+<h4 id="july-07-2024">July 07, 2024<a class="headerlink" href="#july-07-2024" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added alias for .savenade -&gt; .sn, .loadnade -&gt; .ln, .deletenade -&gt; .dn, .importnade -&gt; .in, .listnades -&gt; .lin, .ctspawn -&gt; .cts, .tspawn -&gt; .ts</li>
+<li>Added smart quering for nadenames, where the closest name is being selected for loading names (.ln mid can be used to load a nade with name midflash)</li>
+<li>Added to allow the same lineup-name on different maps, so you can pick like b-smoke multiple times, but once per map. Updated logic for savenade, deletenade, importnade for this.</li>
+<li>Added missing ! commands for listnades, importnade and deletenade.</li>
+<li>Changed cash_team_planted_bomb_but_defused from 800 to 600 as per the update <a href="https://store.steampowered.com/news/app/730/view/4177730135016140040">https://store.steampowered.com/news/app/730/view/4177730135016140040</a></li>
+<li>Added "override" config for live.cfg and live_wingman.cfg (Simply create live_override.cfg and live_wingman_override.cfg in the cfg folder if you want to override any of the commands.)</li>
+<li>Added Uzbek, Japanese, Hungarian and Traditional Chinese translations</li>
+</ul>
+<h1 id="0712">0.7.12<a class="headerlink" href="#0712" title="Permanent link">¶</a></h1>
+<h4 id="june-27-2024">June 27, 2024<a class="headerlink" href="#june-27-2024" title="Permanent link">¶</a></h4>
+<ul>
+<li>Removed unused cvars from cfgs which were causing the server to crash with the new CS# versions.</li>
+<li>Added MatchZyOnDemoUploadEnded Event ater demo is uploaded</li>
+<li>Fixed SendEventAsync Post failing when header is not empty with empty value</li>
+<li>Fixed decoy message localization id</li>
+<li>Made MatchID as int</li>
+</ul>
+<h1 id="0711">0.7.11<a class="headerlink" href="#0711" title="Permanent link">¶</a></h1>
+<h4 id="may-19-2024">May 19, 2024<a class="headerlink" href="#may-19-2024" title="Permanent link">¶</a></h4>
+<ul>
+<li>Improved <code>.help</code> command with better readability and updated commands</li>
+<li>Fixed overtime getting automatically enabled even if turned off in <code>live.cfg</code></li>
+<li>Added <code>matchzy_show_credits_on_match_start</code> config convar to toggle 'MatchZy Plugin by WD-' message on match start.</li>
+<li>Added gradient while printing <code>KNIFE!</code> and <code>LIVE!</code> message.</li>
+<li>Added <code>.pip</code> alias for <code>.traj</code> command to toggle <code>sv_grenade_trajectory_prac_pipreview</code> in practice mode.</li>
+</ul>
+<h1 id="0710">0.7.10<a class="headerlink" href="#0710" title="Permanent link">¶</a></h1>
+<h4 id="may-19-2024_1">May 19, 2024<a class="headerlink" href="#may-19-2024_1" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added <code>matchzy_smoke_color_enabled</code> config convar for practice mode which changes the smoke's color to player's team color (player's color seen in the radar)</li>
+<li>Added <code>.bestspawn</code> command which teleports you to your team's closest spawn from your current position</li>
+<li>Added <code>.worstspawn</code> command which teleports you to your team's furthest spawn from your current position</li>
+<li>Added <code>.bestctspawn</code> command which teleports you to CT team's closest spawn from your current position</li>
+<li>Added <code>.worstctspawn</code> command which teleports you to CT team's furthest spawn from your current position</li>
+<li>Added <code>.besttspawn</code> command which teleports you to T team's closest spawn from your current position</li>
+<li>Added <code>.worsttspawn</code> command which teleports you to T team's furthest spawn from your current position</li>
+<li>Practice mode will no longer have <code>warmup</code> help text.</li>
+</ul>
+<h1 id="079">0.7.9<a class="headerlink" href="#079" title="Permanent link">¶</a></h1>
+<h4 id="may-06-2024">May 06, 2024<a class="headerlink" href="#may-06-2024" title="Permanent link">¶</a></h4>
+<ul>
+<li>Updated <code>pt-BR</code> and <code>ru</code> translations.</li>
+<li>Added <code>.notready</code> alias for <code>.unready</code>.</li>
+<li>Added <code>.forceend</code> alias for <code>.restart</code>/<code>.endmatch</code>.</li>
+</ul>
+<h1 id="078">0.7.8<a class="headerlink" href="#078" title="Permanent link">¶</a></h1>
+<h4 id="may-02-2024">May 02, 2024<a class="headerlink" href="#may-02-2024" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added <code>.solid</code> command in practice mode to toggle <code>mp_solid_teammates</code>.</li>
+<li>Added <code>.impacts</code> command in practice mode to toggle <code>sv_showimpacts</code>.</li>
+<li>Added <code>.traj</code> command in practice mode to toggle <code>sv_grenade_trajectory_prac_pipreview</code>.</li>
+<li>Fixed double prefix in damage report.</li>
+<li>Added commonly used aliases for multiple commands. (<code>.force</code> and <code>.forcestart</code> for force-start, <code>.tactics</code> to enable practice mode, <code>.noblind</code> to toggle no-flash in practice, <code>.cbot</code> to spawn a crouched-bot in practice.)</li>
+<li>Added <code>pt-BR</code> and <code>zh-Hans</code> updated translations.</li>
+<li>Renamed the <code>pt-pt</code> translation file to <code>pt-PT</code></li>
+<li>Fixed translation in <code>fr</code></li>
+</ul>
+<h1 id="077">0.7.7<a class="headerlink" href="#077" title="Permanent link">¶</a></h1>
+<h4 id="april-29-2024">April 29, 2024<a class="headerlink" href="#april-29-2024" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added wingman support. Now, if <code>game_mode</code> is 2, plugin will automatically execute <code>live_wingman.cfg</code>. If <code>game_mode</code> is 1, <code>live.cfg</code> will be executed.</li>
+<li>Setting <code>wingman</code> as <code>true</code> in match config json will now automatically set <code>game_mode 2</code> and reload the map. Wingman toggle from G5V will now also work.</li>
+<li>Removed <code>UpdatePlayersMap</code> from player connect and disconnect methods to avoid it getting called multiple times on map change.</li>
+<li>Made <code>SetMatchEndData</code> to be an async operation.</li>
+<li>Added updated pt-PT translations.</li>
+</ul>
+<h1 id="076">0.7.6<a class="headerlink" href="#076" title="Permanent link">¶</a></h1>
+<h4 id="april-28-2024">April 28, 2024<a class="headerlink" href="#april-28-2024" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added remaining strings available for translation.</li>
+<li>Fixed force-unpause command not working in knife round.</li>
+<li>Fixed <code>cfg</code> folder not available in Windows build of MatchZy with CSSharp.</li>
+</ul>
+<h1 id="075">0.7.5<a class="headerlink" href="#075" title="Permanent link">¶</a></h1>
+<h4 id="april-27-2024">April 27, 2024<a class="headerlink" href="#april-27-2024" title="Permanent link">¶</a></h4>
+<ul>
+<li>Upgraded CounterStrikeSharp to v217</li>
+<li>Fixed CFG execution on Map Start (After the latest update, CFGs were getting overriden by gamemodes cfg. Hence, added a timer to delay MatchZy's CFG execution on MapStart)</li>
+<li>Fixed BO2 setup, now Get5 server will be freed once the BO2 match is over</li>
+</ul>
+<h1 id="074">0.7.4<a class="headerlink" href="#074" title="Permanent link">¶</a></h1>
+<h4 id="april-26-2024">April 26, 2024<a class="headerlink" href="#april-26-2024" title="Permanent link">¶</a></h4>
+<ul>
+<li>Upgraded CounterStrikeSharp to v215</li>
+<li>Added Chinese (Simplified) translations.</li>
+<li>Fixed wrong <code>[EventPlayerConnectFull] KICKING PLAYER</code> during match setup.</li>
+</ul>
+<h1 id="073">0.7.3<a class="headerlink" href="#073" title="Permanent link">¶</a></h1>
+<h4 id="april-06-2024">April 06, 2024<a class="headerlink" href="#april-06-2024" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added an automated build and release pipeline.</li>
+<li>Now all the players will be put in their team on veto start.</li>
+</ul>
+<h1 id="072">0.7.2<a class="headerlink" href="#072" title="Permanent link">¶</a></h1>
+<h4 id="april-02-2024">April 02, 2024<a class="headerlink" href="#april-02-2024" title="Permanent link">¶</a></h4>
+<p><strong>Coach</strong></p>
+<ul>
+<li>Fixed rare case of everyone getting the C4 when coach gets the C4.</li>
+</ul>
+<p><strong>Translation</strong></p>
+<ul>
+<li>Added German translations</li>
+<li>Added Portuguese (Brazil) translations</li>
+<li>Added French translations</li>
+<li>Added Portuguese (Portugal) translations</li>
+</ul>
+<h1 id="071">0.7.1<a class="headerlink" href="#071" title="Permanent link">¶</a></h1>
+<h4 id="march-31-2024">March 31, 2024<a class="headerlink" href="#march-31-2024" title="Permanent link">¶</a></h4>
+<p><strong>Coach</strong></p>
+<ul>
+<li>Fixed coaches able to spectate other teams for 1 second on round start.</li>
+<li>Fixed coaches taking competitive spawns. Now coaches will be spawned in air (in non-competitive spawn).</li>
+<li>Fixed coaches getting weapons in freezetime and their weapons getting dropped after freezetime ends. Now they will be spawned without any weapons.</li>
+<li>Fixed coaches getting the C4. Now only the players will get the C4.</li>
+</ul>
+<p><strong>Translation</strong></p>
+<ul>
+<li>Added translation/multi-lingual support in MatchZy. Currently only match related strings are added in the translation. There will be a folder called <code>lang</code> in which translation JSONs will be present. Currently we have the translations for English and Russian (thanks to <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/innuendo-code" title="GitHub User: innuendo-code">@innuendo-code</a>). To add more languages, create a JSON file with the language locale code (like <code>en.json</code> or <code>fr.json</code>, etc). Contribution for translations are much appreciated! :D</li>
+</ul>
+<p><strong>Practice Mode/Match Mode</strong></p>
+<ul>
+<li>Fixed boost command working in match mode.</li>
+<li>Added <code>.skipveto</code> command which will skip veto in match setup (thanks to <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/lanslide-team" title="GitHub User: lanslide-team">@lanslide-team</a>) <em>(note: veto and this command are removed in the enhanced Auto Tournament fork)</em></li>
+<li>Added complete support of <code>get5_status</code> command which will now return detailed status of the match setup (thanks to <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/The0mikkel" title="GitHub User: The0mikkel">@The0mikkel</a>)</li>
+<li>Added <code>mp_solid_teammates 1</code> in knife round for solid teammates.</li>
+<li>Disabled overtime when <code>.playout</code> command is used.</li>
+</ul>
+<p><strong>Admin</strong></p>
+<ul>
+<li>Added a convar <code>matchzy_everyone_is_admin</code>, if set to <code>true</code>, all the players will be granted admin privileges for MatchZy commands. </li>
+</ul>
+<p><strong>CSSharp</strong></p>
+<ul>
+<li>Migrated the plugin to .NET8, make sure you use CS# v201 or above.</li>
+</ul>
+<h1 id="070">0.7.0<a class="headerlink" href="#070" title="Permanent link">¶</a></h1>
+<h4 id="feb-10-2024">Feb 10, 2024<a class="headerlink" href="#feb-10-2024" title="Permanent link">¶</a></h4>
+<p><strong>Practice Mode</strong></p>
+<ul>
+<li>Added <code>!rethrow</code> command which rethrows player-specific last thrown grenade.</li>
+<li>Added <code>!last</code> command which teleports the player to the last thrown grenade position</li>
+<li>Added <code>!timer</code> command which starts a timer immediately and stops it when you type .timer again, telling you the duration of time</li>
+<li>Added <code>!back &lt;number&gt;</code> command which teleports you back to the provided position in your grenade history</li>
+<li>Added <code>!throwindex &lt;index&gt; &lt;optional index&gt; &lt;optional index&gt;</code> command which throws grenade of provided position(s) from your grenade thrown history. Example: <code>!throwindex 1 2</code> will throw your 1<sup>st</sup> and 2<sup>nd</sup> grenade. <code>!throwindex 4 5 8 9</code> will throw your 4<sup>th</sup>, 5<sup>th</sup>, 8<sup>th</sup> and 9<sup>th</sup> grenade (If you've added delay in grenades, they'll be thrown with their specific delay).</li>
+<li>Added <code>!delay &lt;delay_in_seconds&gt;</code> command which sets a delay on your last grenade. This is only used when using .rethrow or .throwindex</li>
+<li>Added <code>!lastindex</code> command which prints index (position) number of your last thrown grenade.</li>
+<li>Added grenade-specific rethrow commands like <code>!rethrowsmoke</code>, <code>!rethrownade</code>, <code>!rethrowflash</code>, <code>!rethrowmolotov</code> and <code>!rethrowdecoy</code></li>
+<li>Grenades fly-time added. For example, on throwing a grenade, you'll get the message in chat: Flash thrown by WD- took 1.62s to detonate</li>
+</ul>
+<p><strong>Match Mode</strong></p>
+<ul>
+<li>Fixed <code>.stay</code> and <code>.switch</code> not working in in side-selection phase after CS2's Arms Race update. </li>
+<li>Added <code>!forceready</code> command which force-readies player's team (Currently works only in match setup using JSON/Get5, based on the value of <code>min_players_to_ready</code>)</li>
+<li>Improved <code>get5_status</code> command, which will now display proper <code>gamestate</code> and <code>matchid</code> when a match is loaded using JSON/Get5 (Thanks to <a href="https://github.com/The0mikkel">@The0mikkel</a>)</li>
+</ul>
+<p><strong>Coach</strong></p>
+<ul>
+<li>Coaches will now die immediately after freeze-time ends, solving the problem of coach blocking players for 1-2 seconds.</li>
+</ul>
+<h1 id="061-alpha">0.6.1-alpha<a class="headerlink" href="#061-alpha" title="Permanent link">¶</a></h1>
+<h4 id="dec-27-2023">Dec 27, 2023<a class="headerlink" href="#dec-27-2023" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added DryRun mode for Practice Mode. Use <code>.dryrun</code> while in practice mode to activate dryrun! Also added <code>dryrun.cfg</code> in <code>cfg/MatchZy/dryrun.cfg</code> which can be modified as per your requirements</li>
+<li>Added <code>.noflash</code> command in Practice Mode which will make the user immune to flashbangs. Use <code>.noflash</code> again to disable noflash.</li>
+<li>Added <code>.break</code> command in Practice Mode which will break all the breakable entities like glass windows, wooden doors, vents, etc</li>
+<li>Added <code>matchzy_demo_name_format</code> which will allow to set demo name as per the requirement. Default: <code>{TIME}_{MATCH_ID}_{MAP}_{TEAM1}_{TEAM2}</code> <a href="https://shobhit-pathak.github.io/MatchZy/configuration/#matchzy_demo_name_format">Read More</a></li>
+<li>Fixed players able to use <code>.tac</code> even after tactical timeouts were exhausted.</li>
+</ul>
+<h1 id="060-alpha">0.6.0-alpha<a class="headerlink" href="#060-alpha" title="Permanent link">¶</a></h1>
+<h4 id="dec-14-2023">Dec 14, 2023<a class="headerlink" href="#dec-14-2023" title="Permanent link">¶</a></h4>
+<ul>
+<li>
+<p>Added support for Get5 Web panel! (G5V and G5API) (Read more at: <a href="https://shobhit-pathak.github.io/MatchZy/get5/">https://shobhit-pathak.github.io/MatchZy/get5/</a>)
+What can Get5 Web Panel + MatchZy can do?</p>
+</li>
+<li>
+<p>Create teams and setup matches from web panel</p>
+</li>
+<li>Support for BO1, BO3, BO5, etc with Veto and Knife Round</li>
+<li>Get veto, scores and player stats live on the panel</li>
+<li>Get demo uploaded automatically on the panel (which can be downloaded from its match page)</li>
+<li>Pause and unpause game from the panel</li>
+<li>Add players in a live game</li>
+<li>And much more!!!</li>
+</ul>
+<h1 id="051-alpha">0.5.1-alpha<a class="headerlink" href="#051-alpha" title="Permanent link">¶</a></h1>
+<h4 id="dec-8-2023">Dec 8, 2023<a class="headerlink" href="#dec-8-2023" title="Permanent link">¶</a></h4>
+<ul>
+<li>Added <code>.boost</code>, <code>.crouchboost</code>, <code>.crouchbot</code> commands in Practice Mode to spawn Bot/Crouched bot and boost on it.</li>
+<li>Added <code>.ct</code>, <code>.t</code>, and <code>.spec</code> command in Practice Mode to switch the player in requested team</li>
+<li>Added <code>.fas</code> and <code>.watchme</code> command in Practice Mode which forces all players into spectator except the player who called this command</li>
+<li>Added <code>matchzy_autostart_mode</code> command for default launch mode of the plugin (0 for neither/sleep mode, 1 for match mode, 2 for practice mode. Default: 1)</li>
+<li>Added <code>matchzy_save_nades_as_global_enabled</code> config convar to save nades globally</li>
+<li>Added <code>matchzy_use_pause_command_for_tactical_pause</code> config convar to use <code>!pause</code> command as tactical pause</li>
+<li>Renamed <code>.knife</code> command to <code>.roundknife</code> and added <code>.rk</code> alias to resolve conflict with <code>.knife</code> command of other plugins</li>
+<li>Fixed tactical timeout force-unpausing the match on timeout end</li>
+<li>Fixed <code>matchzy_minimum_ready_required 0</code> not working properly on server startup</li>
+<li>Made <code>spectator</code> key in match setup config optional field</li>
+</ul>
+<h1 id="050-alpha">0.5.0-alpha<a class="headerlink" href="#050-alpha" title="Permanent link">¶</a></h1>
+<h4 id="dec-6-2023">Dec 6, 2023<a class="headerlink" href="#dec-6-2023" title="Permanent link">¶</a></h4>
+<ul>
+<li>Matches can now be setup using JSON file! This includes locking players to their correct team and side, setting the map(s) and configuring the game rules. Added <code>matchzy_loadmatch &lt;filepath&gt;</code> and <code>matchzy_loadmatch_url "&lt;url&gt;"</code> commands (read more at <a href="https://shobhit-pathak.github.io/MatchZy/match_setup/">https://shobhit-pathak.github.io/MatchZy/match_setup/</a>)</li>
+<li>Demos can now be uploaded to a URL once the map and recording ends. Command to setup the upload URL: <code>matchzy_demo_upload_url "&lt;url&gt;"</code> (read more at <a href="https://shobhit-pathak.github.io/MatchZy/gotv/#automatic-upload">https://shobhit-pathak.github.io/MatchZy/gotv/#automatic-upload</a>)</li>
+<li>Removed map reload on map end to avoid any issues</li>
+<li>Fixed issues while restoring round during halftime</li>
+<li>Fixed lag on round end which was due to pushing stats into the database. Now that operation is async!</li>
+<li>This one is not related to the working of the plugin, but we have a new documentation page! <a href="https://shobhit-pathak.github.io/MatchZy/">https://shobhit-pathak.github.io/MatchZy/</a></li>
+</ul>
+<h1 id="043-alpha">0.4.3-alpha<a class="headerlink" href="#043-alpha" title="Permanent link">¶</a></h1>
+<h4 id="nov-25-2023">Nov 25, 2023<a class="headerlink" href="#nov-25-2023" title="Permanent link">¶</a></h4>
+<ul>
+<li>
+<p>A full implementation of CSSharp's admin system!
+You can now fine-tune admin permissions as per your requirement
+Flag-wise permissions:</p>
+</li>
+<li>
+<p><code>@css/root</code>: Grants access to all admin commands</p>
+</li>
+<li><code>@css/config</code>: Grants access to config related admin commands</li>
+<li><code>@custom/prac</code>: Grants access to practice related admin commands</li>
+<li><code>@css/map</code>: Grants access to change map and toggle practice mode</li>
+<li><code>@css/rcon</code>: Grants access to trigger RCON commands using <code>!rcon &lt;command&gt;</code></li>
+<li>
+<p><code>@css/chat</code>: Grants access to send admin chat messages using <code>!asay &lt;message&gt;</code></p>
+</li>
+<li>
+<p>Added <code>.forcepause</code> and <code>.forceunpause</code> commands for admins so that they can use <code>.pause</code> and <code>.unpause</code> as a player while playing (Use <code>.fp</code> and <code>.fup</code> for shorter commands)</p>
+</li>
+<li>Added <code>.playout</code> commands to toggle Playout! (If playout is enabled, all rounds would be played irrespective of winner. Useful in scrims!). Also added <code>matchzy_playout_enabled_default</code> command to enable/disable playout by default. Default: <code>matchzy_playout_enabled_default false</code></li>
+<li>Added <code>matchzy_admin_chat_prefix</code> command to configure admin chat prefix when using <code>.asay &lt;message&gt;</code>. Default: <code>matchzy_admin_chat_prefix [{Red}ADMIN{Default}]</code></li>
+<li>Added <code>.help</code> command to list all the available commands during that match phase</li>
+<li>Rounded off blind duration in practice mode to 2 decimal places.</li>
+<li>Added damage report for bot in practice mode (for every hit, similar to Get5 practice mode)</li>
+<li>Fixed CSTV bot getting kicked on adding a bot in practice server</li>
+<li>Improvements in handling saved nades (now JSON structure is used to manage saved nades, thanks to <a class="magiclink magiclink-github magiclink-mention" href="https://github.com/DEAFPS" title="GitHub User: DEAFPS">@DEAFPS</a>!)</li>
+<li>Removed "Welcome to the server" message on joining the server</li>
+</ul>
+<h1 id="042-alpha">0.4.2-alpha<a class="headerlink" href="#042-alpha" title="Permanent link">¶</a></h1>
+<h4 id="nov-21-2023">Nov 21, 2023<a class="headerlink" href="#nov-21-2023" title="Permanent link">¶</a></h4>
+<ul>
+<li>MatchZy now supports CSSharp's admin system!
+You can create a new entry in the <code>/addons/counterstrikesharp/configs/admins.json</code> file with <code>@css/generic</code> generic flag like mentioned in the below example:
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>{
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>  "WD-": {
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>    "identity": "76561198154367261",
+</span><span id="__span-1-4"><a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a>    "flags": [
+</span><span id="__span-1-5"><a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>      "@css/generic"
+</span><span id="__span-1-6"><a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>    ]
+</span><span id="__span-1-7"><a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a>  },
+</span><span id="__span-1-8"><a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>  "Another admin": {
+</span><span id="__span-1-9"><a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a>    "identity": "SteamID 2",
+</span><span id="__span-1-10"><a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a>    "flags": [
+</span><span id="__span-1-11"><a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a>      "@css/generic"
+</span><span id="__span-1-12"><a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a>    ]
+</span><span id="__span-1-13"><a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a>  }
+</span><span id="__span-1-14"><a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a>}
+</span></code></pre></div></li>
+</ul>
+<p>To maintain backwards compatibility, we still support creating admins using older method (by adding entries in <code>csgo/cfg/MatchZy/admins.json</code>), so you can choose the most convenient method according to your preference.</p>
+<h1 id="041-alpha">0.4.1-alpha<a class="headerlink" href="#041-alpha" title="Permanent link">¶</a></h1>
+<h4 id="nov-20-2023">Nov 20, 2023<a class="headerlink" href="#nov-20-2023" title="Permanent link">¶</a></h4>
+<ul>
+<li>Fixed a case where coaches were not swapping after halftime</li>
+<li>Fixed a case where round restore on halftime would swap the teams internally</li>
+</ul>
+<h1 id="040-alpha">0.4.0-alpha<a class="headerlink" href="#040-alpha" title="Permanent link">¶</a></h1>
+<h4 id="nov-17-2023">Nov 17, 2023<a class="headerlink" href="#nov-17-2023" title="Permanent link">¶</a></h4>
+<ul>
+<li>Coach system! <code>.coach &lt;side&gt;</code> Starts coaching the specified side. Example: <code>.coach t</code> to start coaching terrorist side!</li>
+<li>MySQL Database is now supported! Now same DB can be used with multiple servers! Configure <code>csgo/cfg/MatchZy/database.json</code> according to your need!</li>
+<li><code>.spawn</code> command now uses competitive spawns!</li>
+<li>Many commands added in Practice mode: <code>.clear</code>, <code>.fastforward</code>, <code>.god</code>, <code>.savenade &lt;name&gt; &lt;optional description&gt;</code>, <code>.loadnade &lt;name&gt;</code>, <code>.deletenade &lt;name&gt;</code>, <code>.importnade &lt;code&gt;</code>, <code>.listnades &lt;optional filter&gt;</code> (Refer to <a href="https://github.com/shobhit-pathak/MatchZy#practice-mode-commands">Readme</a> for their descriptions!)</li>
+<li>Added text message for showing blind duration by a flashbang in practice session!</li>
+<li>Damage report will now be shown for every opponent player (even if damage is not dealt!)</li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="https://github.com/shobhit-pathak/MatchZy/assets/140690706/533b4d4b-7f09-48ec-a16e-3c6c9a8cb591" data-desc-position="bottom"><img alt="pracrelease" src="https://github.com/shobhit-pathak/MatchZy/assets/140690706/533b4d4b-7f09-48ec-a16e-3c6c9a8cb591"></a></p>
+<h1 id="030-alpha">0.3.0-alpha<a class="headerlink" href="#030-alpha" title="Permanent link">¶</a></h1>
+<h4 id="nov-14-2023">Nov 14, 2023<a class="headerlink" href="#nov-14-2023" title="Permanent link">¶</a></h4>
+<ul>
+<li>Team names can now be configured using <code>!team1 &lt;teamname&gt;</code> and <code>!team2 &lt;teamname&gt;</code> command. The same will be stored in Database and CSV.</li>
+<li>If team names are not configured, it will be configured automatically by picking a player's name randomly from both the teams (For example, if there is a player <code>WD-</code>, their teamname will be set to <code>team_WD-</code>)</li>
+<li>Damage report in chat will be shown on round end (similar to Faceit!)</li>
+<li>Chat timer delay can now be configured using <code>matchzy_chat_messages_timer_delay</code>. Example: <code>matchzy_chat_messages_timer_delay 12</code> </li>
+<li>Players can be whitelisted by adding their steam64id in <code>cfg/MatchZy/whitelist.cfg</code>. Whitelisting is a toggleable feature and can be enabled using <code>.whitelist</code>. To enable it by default, set <code>matchzy_whitelist_enabled_default true</code> in <code>cfg/MatchZy/config.cfg</code></li>
+</ul>
+<p><a class="glightbox" data-type="image" data-width="100%" data-height="auto" href="https://github.com/shobhit-pathak/MatchZy/assets/140690706/85b64823-419c-41d2-850d-d8f88fa4a4ca" data-desc-position="bottom"><img alt="image" src="https://github.com/shobhit-pathak/MatchZy/assets/140690706/85b64823-419c-41d2-850d-d8f88fa4a4ca"></a></p>
+<h1 id="020-alpha">0.2.0-alpha<a class="headerlink" href="#020-alpha" title="Permanent link">¶</a></h1>
+<h4 id="nov-5-2023">Nov 5, 2023<a class="headerlink" href="#nov-5-2023" title="Permanent link">¶</a></h4>
+<ul>
+<li>Practice mode added ( with <code>.bot</code>, <code>.spawn</code>, <code>.ctspawn</code>, <code>.tspawn</code>, <code>.nobots</code> and <code>.exitprac</code> commands!)</li>
+<li>Chat prefixes can now be configured using <code>matchzy_chat_prefix</code>. Example: <code>matchzy_chat_prefix [{Green}MatchZy{Default}]</code> (More details related to colors is present in readme and <code>config.cfg</code>)</li>
+<li>Added RCON command via chat! Now admins can use <code>!rcon &lt;command&gt;</code> in chat to trigger a command to the server!</li>
+<li>Fixed some bugs related to Demo recording and match pause when match was restarted using <code>.restart</code></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+      
+      <nav class="md-footer__inner md-grid" aria-label="Footer">
+        
+          
+          <a href="../LLM_QUICK_REFERENCE/" class="md-footer__link md-footer__link--prev" aria-label="Previous: LLM Quick Reference">
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+            </div>
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              <div class="md-ellipsis">
+                LLM Quick Reference
+              </div>
+            </div>
+          </a>
+        
+        
+      </nav>
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2025 Sivert Gullberg Hansen
+    </div>
+  
+  
+</div>
+      
+        
+<div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/sivert-io/MatchZy" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M173.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M252.8 8C114.1 8 8 113.3 8 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C436.2 457.8 504 362.9 504 252 504 113.3 391.5 8 252.8 8M105.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"></path></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://discord.gg/n7gHYau7aW" target="_blank" rel="noopener" title="discord.gg" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path d="M492.5 69.8c-.2-.3-.4-.6-.8-.7-38.1-17.5-78.4-30-119.7-37.1-.4-.1-.8 0-1.1.1s-.6.4-.8.8c-5.5 9.9-10.5 20.2-14.9 30.6-44.6-6.8-89.9-6.8-134.4 0-4.5-10.5-9.5-20.7-15.1-30.6-.2-.3-.5-.6-.8-.8s-.7-.2-1.1-.2C162.5 39 122.2 51.5 84.1 69c-.3.1-.6.4-.8.7C7.1 183.5-13.8 294.6-3.6 404.2c0 .3.1.5.2.8s.3.4.5.6c44.4 32.9 94 58 146.8 74.2.4.1.8.1 1.1 0s.7-.4.9-.7c11.3-15.4 21.4-31.8 30-48.8.1-.2.2-.5.2-.8s0-.5-.1-.8-.2-.5-.4-.6-.4-.3-.7-.4c-15.8-6.1-31.2-13.4-45.9-21.9-.3-.2-.5-.4-.7-.6s-.3-.6-.3-.9 0-.6.2-.9.3-.5.6-.7c3.1-2.3 6.2-4.7 9.1-7.1.3-.2.6-.4.9-.4s.7 0 1 .1c96.2 43.9 200.4 43.9 295.5 0 .3-.1.7-.2 1-.2s.7.2.9.4c2.9 2.4 6 4.9 9.1 7.2.2.2.4.4.6.7s.2.6.2.9-.1.6-.3.9-.4.5-.6.6c-14.7 8.6-30 15.9-45.9 21.8-.2.1-.5.2-.7.4s-.3.4-.4.7-.1.5-.1.8.1.5.2.8c8.8 17 18.8 33.3 30 48.8.2.3.6.6.9.7s.8.1 1.1 0c52.9-16.2 102.6-41.3 147.1-74.2.2-.2.4-.4.5-.6s.2-.5.2-.8c12.3-126.8-20.5-236.9-86.9-334.5zm-302 267.7c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.4 59.2-52.8 59.2m195.4 0c-29 0-52.8-26.6-52.8-59.2s23.4-59.2 52.8-59.2c29.7 0 53.3 26.8 52.8 59.2 0 32.7-23.2 59.2-52.8 59.2"></path></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "..", "features": ["content.code.annotate", "content.code.copy", "content.tooltips", "navigation.footer", "navigation.indexes", "navigation.sections", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "search.suggest", "toc.follow"], "search": "../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
