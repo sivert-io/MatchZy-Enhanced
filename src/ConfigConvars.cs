@@ -58,6 +58,13 @@ namespace MatchZy
         // Event/Webhook sending master switch (diagnostics)
         public FakeConVar<bool> eventsEnabled = new("matchzy_events_enabled", "Master switch for MatchZy event/webhook sending and retry queue processing. Default: true", true);
 
+        // Periodic warmup chat broadcasts prompting players to type .ready / showing the
+        // current ready count. Set to false when an external orchestrator (RCON
+        // css_forcestart, custom auto-ready plugin, etc.) owns the match-start flow —
+        // the .ready prompts become misleading noise in that case. Default: true to
+        // preserve existing behavior.
+        public FakeConVar<bool> sendReadyChatMessages = new("matchzy_send_ready_chat_messages", "Whether to periodically broadcast the 'Please type .ready' / 'current ready players' messages during warmup. Set to false when an external orchestrator owns match start. Default: true", true);
+
         // Center HTML notifications
         public FakeConVar<bool> centerHtmlNotifications = new("matchzy_center_html_notifications", "Whether to show important notifications in the center of the screen (match live, pause, etc). Default: false", false);
         public FakeConVar<int> notificationDurationGlobal = new("matchzy_notification_duration_global", "Default duration in seconds for global center HTML notifications. Default: 5", 5);

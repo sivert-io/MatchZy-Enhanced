@@ -496,6 +496,11 @@ namespace MatchZy
         private void SendUnreadyPlayersMessage()
         {
             if (!isWarmup || matchStarted) return;
+            // Allow operators to silence the periodic "type .ready" prompts when an
+            // external orchestrator (RCON css_forcestart, custom auto-ready plugin,
+            // etc.) owns the match-start flow. The timer keeps ticking but no-ops,
+            // so the convar can be toggled at runtime.
+            if (!sendReadyChatMessages.Value) return;
             List<string> unreadyPlayers = new();
 
             foreach (var key in playerReadyStatus.Keys)
