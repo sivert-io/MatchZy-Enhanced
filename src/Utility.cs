@@ -474,8 +474,14 @@ namespace MatchZy
         {
             try
             {
-                string status = tournamentGoLiveStatus.Value.Trim();
-                return string.IsNullOrEmpty(status) ? "live" : status;
+                string status = (tournamentGoLiveStatus.Value ?? "").Trim().ToLowerInvariant();
+                return status switch
+                {
+                    "" => "live",
+                    "live" => "live",
+                    "playing" => "playing",
+                    _ => "live"
+                };
             }
             catch
             {
