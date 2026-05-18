@@ -478,7 +478,6 @@ namespace MatchZy
                 return status switch
                 {
                     "" => "playing",
-                    "live" => "live",
                     "playing" => "playing",
                     _ => "playing"
                 };
