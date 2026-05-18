@@ -22,6 +22,7 @@ namespace MatchZy
         public const string knifeCfgPath = "MatchZy/knife.cfg";
         public const string liveCfgPath = "MatchZy/live.cfg";
         public const string liveWingmanCfgPath = "MatchZy/live_wingman.cfg";
+        private static readonly Regex SafeCVarValuePattern = new(@"^(?:[+-]?(?:\d+\.?\d*|\.\d+)|true|false|on|off|yes|no)$", RegexOptions.IgnoreCase | RegexOptions.CultureInvariant);
 
         private void PrintToAllChat(string message)
         {
@@ -513,11 +514,10 @@ namespace MatchZy
 
             foreach (var kvp in playerData)
             {
-                int key = kvp.Key;
                 var player = kvp.Value;
                 if (player == null || !player.IsValid || player.IsHLTV) continue;
 
-                bool isReady = playerReadyStatus.TryGetValue(key, out bool ready) && ready;
+                bool isReady = playerReadyStatus.TryGetValue(kvp.Key, out bool ready) && ready;
                 if (!isReady)
                 {
                     unreadyPlayers.Add(player.PlayerName);
@@ -3386,9 +3386,9 @@ namespace MatchZy
 
         public void ExecuteChangedConvars()
         {
-            static bool IsSafeUnquoted(string value)
+            static bool IsSafeCVarValueUnquoted(string value)
             {
-                return Regex.IsMatch(value, @"^(?:[+-]?(?:\d+\.?\d*|\.\d+)|true|false|on|off|yes|no)$", RegexOptions.IgnoreCase);
+                return SafeCVarValuePattern.IsMatch(value);
             }
 
             static string QuoteAndEscape(string value)
@@ -3401,13 +3401,13 @@ namespace MatchZy
                 string value = matchConfig.ChangedCvars[key];
                 string trimmed = value.Trim();
 
-                if (trimmed.Contains(';') || trimmed.Contains('\n') || trimmed.Contains('\r'))
+                if (trimmed.Contains(';') || trimmed.Contains('\n') || trimmed.Contains('\r') || trimmed.Contains('`') || trimmed.Contains('|') || trimmed.Contains('&'))
                 {
-                    Log($"[ExecuteChangedConvars] Skipping unsafe cvar value for {key} (contains command separator/newline).");
+                    Log($"[ExecuteChangedConvars] Skipping unsafe cvar value for {key} (contains command separators).");
                     continue;
                 }
 
-                string renderedValue = IsSafeUnquoted(trimmed) ? trimmed : QuoteAndEscape(trimmed);
+                string renderedValue = IsSafeCVarValueUnquoted(trimmed) ? trimmed : QuoteAndEscape(trimmed);
                 Log($"[ExecuteChangedConvars] Execing: {key} {renderedValue}");
                 Server.ExecuteCommand($"{key} {renderedValue}");
             }

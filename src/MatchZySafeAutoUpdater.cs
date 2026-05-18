@@ -363,7 +363,7 @@ public partial class MatchZy
                 return false;
             }
 
-            if (isMatchSetup || readyAvailable || isWarmup || isKnifeRound || isMatchLive || matchStarted || isPaused)
+            if (IsAnyMatchFlowStateActive())
             {
                 return false;
             }
@@ -374,6 +374,18 @@ public partial class MatchZy
         {
             return false;
         }
+    }
+
+    private bool IsAnyMatchFlowStateActive()
+    {
+        return
+            isMatchSetup ||
+            readyAvailable ||
+            isWarmup ||
+            isKnifeRound ||
+            isMatchLive ||
+            matchStarted ||
+            isPaused;
     }
 
     /// <summary>
@@ -594,4 +606,3 @@ public sealed class UpToDateCheckInnerResponse
     [JsonPropertyName("required_version")]
     public int RequiredVersion { get; set; }
 }
-

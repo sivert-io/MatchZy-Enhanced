@@ -158,7 +158,8 @@ public partial class MatchZy
             return;
         }
 
-        if (!isMatchSetup && minimumReadyRequired == 0 && (ctPlayerCount == 0 || tPlayerCount == 0))
+        bool isUnbalancedEveryoneReadyMode = !isMatchSetup && minimumReadyRequired == 0 && (ctPlayerCount == 0 || tPlayerCount == 0);
+        if (isUnbalancedEveryoneReadyMode)
         {
             Log("[CheckAndAutoReadyPlayers] Waiting for at least one player on both CT and T before auto-readying in everyone-ready mode.");
             return;
