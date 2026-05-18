@@ -477,15 +477,15 @@ namespace MatchZy
                 string status = (tournamentGoLiveStatus.Value ?? "").Trim().ToLowerInvariant();
                 return status switch
                 {
-                    "" => "live",
+                    "" => "playing",
                     "live" => "live",
                     "playing" => "playing",
-                    _ => "live"
+                    _ => "playing"
                 };
             }
             catch
             {
-                return "live";
+                return "playing";
             }
         }
 

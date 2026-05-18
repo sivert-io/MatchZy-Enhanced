@@ -143,7 +143,7 @@ namespace MatchZy
         public FakeConVar<string> tournamentMatch = new("matchzy_tournament_match", "Match slug/identifier currently loaded on this server", "");
         public FakeConVar<string> tournamentUpdated = new("matchzy_tournament_updated", "Unix timestamp of last tournament status update", "0");
         public FakeConVar<string> tournamentNextMatch = new("matchzy_tournament_next_match", "Next match slug/identifier queued for this server", "");
-        public FakeConVar<string> tournamentGoLiveStatus = new("matchzy_tournament_go_live_status", "Status string published when match goes live. Default: live. Use playing if an external panel stops the server on live.", "live");
+        public FakeConVar<string> tournamentGoLiveStatus = new("matchzy_tournament_go_live_status", "Status string published when match goes live. Default: playing. Set to live only if your external API expects live.", "playing");
 
         // Match report upload
         public FakeConVar<string> matchReportEndpoint = new("matchzy_report_endpoint", "HTTP endpoint for match report uploads (https://host/api/events/report)", "");
