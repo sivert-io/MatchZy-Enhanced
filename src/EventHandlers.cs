@@ -65,21 +65,16 @@ public partial class MatchZy
             if (player.UserId.HasValue)
             {
                 playerData[player.UserId.Value] = player;
-                connectedPlayers++;
+                connectedPlayers = GetRealPlayersCount();
                 if (readyAvailable && !matchStarted)
                 {
                     Log($"[AutoReady] Player connected: userId={player.UserId.Value}, name={player.PlayerName}, autoReadyEnabled={autoReadyEnabled.Value}, isMatchSetup={isMatchSetup}, connectedPlayers={connectedPlayers}, TeamNum={player.TeamNum}");
 
-                    // Ready system: players start as UNREADY until they type .ready.
-                    // If auto-ready is enabled, we'll simulate the player typing .ready after a short delay
-                    // once both teams have the minimum required players.
-                    playerReadyStatus[player.UserId.Value] = false;
+                    ResetPlayerWarmupReadyAndAutoReady(player);
+                    HandleClanTags();
 
-                    // If player already has a team assigned (e.g., reconnecting or match loaded while on server),
-                    // check if we should auto-ready them
                     if (autoReadyEnabled.Value && (player.TeamNum == (int)CsTeam.CounterTerrorist || player.TeamNum == (int)CsTeam.Terrorist))
                     {
-                        // Use a small delay to ensure team assignment is complete
                         AddTimer(autoReadyCheckDelay.Value, () =>
                         {
                             CheckAndAutoReadyPlayers();
@@ -189,12 +184,9 @@ public partial class MatchZy
             if (!player!.UserId.HasValue) return HookResult.Continue;
             int userId = player.UserId.Value;
 
-            if (playerReadyStatus.ContainsKey(userId))
-            {
-                playerReadyStatus.Remove(userId);
-                connectedPlayers--;
-            }
+            playerReadyStatus.Remove(userId);
             playerData.Remove(userId);
+            connectedPlayers = GetRealPlayersCount();
             playerConnectionTimes.Remove(player.SteamID);
             
             // Auto-ready tracking cleanup
@@ -204,6 +196,8 @@ public partial class MatchZy
                 pending?.Kill();
                 autoReadyPendingReadyTimers.Remove(userId);
             }
+
+            bool wasWarmupReady = readyAvailable && !matchStarted;
 
             if (matchzyTeam1.coach.Contains(player))
             {
@@ -279,6 +273,11 @@ public partial class MatchZy
             }
 
             TriggerMatchReportUpload("player_disconnect");
+
+            if (wasWarmupReady)
+            {
+                CheckLiveRequired();
+            }
             
             // Check if FFW should be started (entire team left)
             if (ffwEnabled.Value && isMatchLive && !isSimulationMode)
