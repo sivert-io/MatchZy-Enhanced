@@ -139,10 +139,11 @@ namespace MatchZy
         public FakeConVar<string> matchStartMessage = new("matchzy_match_start_message", "Message to show when the match starts. Use $$$ to break message into multiple lines. Set to \"\" to disable.", "");
 
         // Tournament Status ConVars
-        public FakeConVar<string> tournamentStatus = new("matchzy_tournament_status", "Current status of the server (idle/loading/warmup/knife/live/paused/halftime/postgame/error)", "idle");
+        public FakeConVar<string> tournamentStatus = new("matchzy_tournament_status", "Current status of the server (idle/loading/warmup/knife/playing/paused/halftime/postgame/error)", "idle");
         public FakeConVar<string> tournamentMatch = new("matchzy_tournament_match", "Match slug/identifier currently loaded on this server", "");
         public FakeConVar<string> tournamentUpdated = new("matchzy_tournament_updated", "Unix timestamp of last tournament status update", "0");
         public FakeConVar<string> tournamentNextMatch = new("matchzy_tournament_next_match", "Next match slug/identifier queued for this server", "");
+        public FakeConVar<string> tournamentGoLiveStatus = new("matchzy_tournament_go_live_status", "Status string published when match goes live. Always uses playing for API compatibility.", "playing");
 
         // Match report upload
         public FakeConVar<string> matchReportEndpoint = new("matchzy_report_endpoint", "HTTP endpoint for match report uploads (https://host/api/events/report)", "");

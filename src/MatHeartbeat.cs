@@ -225,6 +225,7 @@ namespace MatchZy
                 "loading" => "loading",
                 "warmup" => "warmup",
                 "live" => "live",
+                "playing" => "live",
                 "postgame" => "postgame",
                 "error" => "error",
                 // MatchZy-only / extra phases (MAT only accepts a smaller set)
@@ -381,4 +382,3 @@ namespace MatchZy
         }
     }
 }
-

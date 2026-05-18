@@ -145,6 +145,7 @@ namespace MatchZy
                         SendPlayerReadyEvent(player, false);
                     }
                     HandleClanTags();
+                    CheckLiveRequired();
                 }
             }
         }
